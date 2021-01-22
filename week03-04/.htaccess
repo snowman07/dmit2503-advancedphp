@@ -1,0 +1,5 @@
+Options +Indexes
+AuthName "Oppppsssss"
+AuthType Basic
+AuthUserFile /home/adomingo4/data/.htpasswd
+Require valid-user

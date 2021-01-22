@@ -3,6 +3,34 @@
 include ("../includes/header.php");
 
 
+
+require_once('../login/classes/Login.php');
+
+$login = new Login();
+
+
+
+if($login->isUserLoggedIn() == true) {
+
+	include("../includes/header.php");
+	echo "Logged in as " . $_SESSION['user_name'] . " . ID is " . $_SESSION['user_id'];
+
+	//Lets create a new variable which will be the author of this blog post.
+
+	$author_id = $_SESSION['user_id'];
+
+
+} else {
+
+	//echo "NOT logged in";
+	header("Location:../login/index.php");
+}
+
+//exit(); // CAREFUL. DONT FORGET YOU PUT THIS IN
+
+
+
+
 // retrieve the query string variable that decides which character we are editing. This is MOST important !!!
 
 $blog_ID = $_GET['bid'];
@@ -69,7 +97,7 @@ if(isset($_POST['delete'])){
 
 // Step 1: Create a list of links so that the user can select which entry they wish to edit.
 
-	$result = mysqli_query($con, "SELECT * FROM mublog") or die(mysqli_error($con));
+	$result = mysqli_query($con, "SELECT * FROM mublog WHERE author_id = '$author_id'") or die(mysqli_error($con));
 
 		while($row = mysqli_fetch_array($result)){
 			

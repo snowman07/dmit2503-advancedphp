@@ -45,7 +45,7 @@ function mysqli_result($res, $row, $field=0) {
 
 
 
-$result = mysqli_query($con, "SELECT * FROM mublog ORDER BY bid DESC $limstring");
+$result = mysqli_query($con, "SELECT * FROM mublog JOIN users ON users.user_id = mublog.author_id ORDER BY bid DESC $limstring");
 ?>
 
 <?php while($row = mysqli_fetch_array($result)): ?>
@@ -58,10 +58,12 @@ $result = mysqli_query($con, "SELECT * FROM mublog ORDER BY bid DESC $limstring"
 		</div>
 		<div class="col-md-6">
 			<div class="timedate pull-right">
-			<?php 
-				$date = strtotime($row['timedate']);/* fixes niggly MySQL to PHP date problem */
-				echo date("F j, Y - g:i a", $date);
-			?>
+				<?php 
+					$date = strtotime($row['timedate']);/* fixes niggly MySQL to PHP date problem */
+					echo date("F j, Y - g:i a", $date);
+				?>
+				<br>
+					by <em><b><?php echo $row['user_name']; ?></b></em>
 			</div>
 		</div>
 	</div>

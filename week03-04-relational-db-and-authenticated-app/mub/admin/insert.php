@@ -1,7 +1,36 @@
 <?php
 
+// integrate the auth (Login) script
 
-include("../includes/header.php");
+
+
+require_once('../login/classes/Login.php');
+
+$login = new Login();
+
+
+
+if($login->isUserLoggedIn() == true) {
+
+	include("../includes/header.php");
+	echo "Logged in as " . $_SESSION['user_name'] . " . ID is " . $_SESSION['user_id'];
+
+	//Lets create a new variable which will be the author of this blog post.
+
+	$author_id = $_SESSION['user_id'];
+
+
+} else {
+
+	//echo "NOT logged in";
+	header("Location:../login/index.php");
+}
+
+//exit(); // CAREFUL. DONT FORGET YOU PUT THIS IN
+
+
+
+
 
 if(isset($_POST['submit'])){
 	// trim(): removes spaces before or after a string
@@ -37,7 +66,7 @@ if(isset($_POST['submit'])){
 	// check for validation boolean. If its still 1, then user has passed.
 	if($boolValidateOK == 1){ // SUCCESS !!!
 
-		mysqli_query($con, "INSERT INTO mublog (title, message) VALUES ('$title','$entry')") or die(mysqli_error($con));
+		mysqli_query($con, "INSERT INTO mublog (title, message, author_id) VALUES ('$title','$entry','$author_id')") or die(mysqli_error($con));
 
 
 		$valSuccess= "Entry Added";

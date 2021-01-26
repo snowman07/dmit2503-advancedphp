@@ -38,7 +38,7 @@ $blog_ID = $_GET['bid'];
 if(!isset($blog_ID )){
 	//$char_ID = 1;// assign	a default value in case no query string value; this is important for later DB queries
 
-	$result = mysqli_query($con, "SELECT * FROM mublog LIMIT 1") or die(mysqli_error($con));
+	$result = mysqli_query($con, "SELECT * FROM mublog WHERE author_id = '$author_id' LIMIT 1") or die(mysqli_error($con));
 	while($row = mysqli_fetch_array($result)){
 		$blog_ID  = $row['bid'];
 	}

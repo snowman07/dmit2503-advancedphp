@@ -6,7 +6,7 @@
 	$pageid = $_GET['id'];
 	// this is mission critical, so in case $char_id has no value, we need to give it a default value
 	if(!isset($pageid)){
-		$default = mysqli_query($con, "SELECT id FROM mugallery_2019 LIMIT 1") or die(mysqli_error($con));
+		$default = mysqli_query($con, "SELECT id FROM lab2_mugallery LIMIT 1") or die(mysqli_error($con));
 		while($row = mysqli_fetch_array($default)){
 			$pageid = $row['id']; 
 		}
@@ -41,7 +41,7 @@
 			$description = $_POST['description'];
 			
 
-			mysqli_query($con, "UPDATE mugallery_2019 SET 
+			mysqli_query($con, "UPDATE lab2_mugallery SET 
 				title = '$title',
 				description = '$description'
 				
@@ -57,7 +57,7 @@
 
 //	CREATE NAV LINKS
 
-$result = mysqli_query($con, "SELECT * FROM mugallery_2019") or die(mysqli_error($con));
+$result = mysqli_query($con, "SELECT * FROM lab2_mugallery") or die(mysqli_error($con));
 
 while($row = mysqli_fetch_array($result)){
 		
@@ -76,7 +76,7 @@ while($row = mysqli_fetch_array($result)){
 
 	
 
-	$result = mysqli_query($con, "SELECT * FROM mugallery_2019 WHERE id = '$pageid'") or die(mysqli_error($con));
+	$result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE id = '$pageid'") or die(mysqli_error($con));
 
 	while($row = mysqli_fetch_array($result)){
 		$filename = $row['filename'];

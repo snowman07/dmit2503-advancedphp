@@ -13,7 +13,7 @@
 
 	
 	//DELETE RECORD FROM DB
-	mysqli_query($con, "DELETE FROM mugallery_2019 WHERE id = '$pageid'") or die(mysqli_error($con));
+	mysqli_query($con, "DELETE FROM lab2_mugallery WHERE id = '$pageid'") or die(mysqli_error($con));
 
 	// GO BACK TO EDIT
 	header("Location: edit.php");

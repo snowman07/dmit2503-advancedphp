@@ -69,7 +69,7 @@
 			 $filename = $_FILES["myfile"]["name"];
 			  
 			  
-			  mysqli_query($con,"INSERT INTO mugallery_2019 (filename, title, description) VALUES ('$filename','$title', '$description')") or die(mysqli_error($con));
+			  mysqli_query($con,"INSERT INTO lab2_mugallery (filename, title, description) VALUES ('$filename','$title', '$description')") or die(mysqli_error($con));
 
 			  $title = "";
   			$description = "";

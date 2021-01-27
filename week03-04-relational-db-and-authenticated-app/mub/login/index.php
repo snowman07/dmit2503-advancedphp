@@ -34,7 +34,7 @@ if ($login->isUserLoggedIn() == true) {
     // the user is logged in. you can do whatever you want here.
     // for demonstration purposes, we simply show the "you are logged in" view.
     include("../includes/header.php");
-    include("views/not_logged_in.php");
+    include("views/logged_in.php");
     include("../includes/footer.php");
 
 } else {

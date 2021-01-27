@@ -27,5 +27,5 @@ if (mysqli_connect_errno()) {
 
   // WE can use define the global error handling. This will vary between different web servers you may encounter. You may be able to set this using the "php.ini" file (if you have access), but you can also define it in your code.
 
-error_reporting(E_ALL ^ E_NOTICE);
+  error_reporting(E_ALL ^ E_NOTICE);
 ?>

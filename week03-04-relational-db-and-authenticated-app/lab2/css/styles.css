@@ -83,7 +83,8 @@ a{
 	padding-bottom: 18px !important;
 
 	position: relative;
-	top:-53px;
+	/* top:-53px; */
+	top: -25px;
 	border-radius:5px;
 
 }

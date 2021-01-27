@@ -10,7 +10,7 @@ include ("includes/header.php");
 		<?php 
 
 
-		$result = mysqli_query($con, "SELECT * FROM mugallery_2019") or die(mysqli_error($con));
+		$result = mysqli_query($con, "SELECT * FROM lab2_mugallery") or die(mysqli_error($con));
 
 		while($row = mysqli_fetch_array($result)){
 				

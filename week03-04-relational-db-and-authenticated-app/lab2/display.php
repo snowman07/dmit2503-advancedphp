@@ -4,7 +4,7 @@ $id = $_GET['id'];
 if(!is_numeric($id)){// just a catchall if the ID is messed with
 	header("Location:index.php");
 }
-$result = mysqli_query($con, "SELECT * FROM mugallery_2019 WHERE id = '$id'") or die(mysqli_error($con));
+$result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE id = '$id'") or die(mysqli_error($con));
 while($row = mysqli_fetch_array($result)){
 	$pageTitle = $row['title'];
 }
@@ -17,12 +17,12 @@ include ("includes/header.php");
 
 //select * from foo where id = (select min(id) from foo where id > 4)
 // NEXT/PREVIOUS LINKS
-		$next= mysqli_query($con,"SELECT id FROM mugallery_2019 WHERE id = (select min(id) from mugallery_2019 where id > '$id') LIMIT 1");
+		$next= mysqli_query($con,"SELECT id FROM lab2_mugallery WHERE id = (select min(id) from lab2_mugallery where id > '$id') LIMIT 1");
 		while ($row = mysqli_fetch_array($next)){
 			$idNext =  $row['id'];
 
 		}
-		$prev= mysqli_query($con,"SELECT id FROM mugallery_2019 WHERE id = (select max(id) from mugallery_2019 where id < '$id') LIMIT 1");
+		$prev= mysqli_query($con,"SELECT id FROM lab2_mugallery WHERE id = (select max(id) from lab2_mugallery where id < '$id') LIMIT 1");
 		while ($row = mysqli_fetch_array($prev)){
 			$idPrev =  $row['id'];
 
@@ -50,7 +50,7 @@ include ("includes/header.php");
 		<?php 
 		/*$id = $_GET['id'];*/
 
-		$result = mysqli_query($con, "SELECT * FROM mugallery_2019 WHERE id = '$id'") or die(mysqli_error($con));
+		$result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE id = '$id'") or die(mysqli_error($con));
 		?>
 		<?php while($row = mysqli_fetch_array($result)): ?>
 				

@@ -24,10 +24,12 @@ a{
 	margin: 2px;
 	padding:1px;
 }
+/*
 .thumb img{
-	/*width:150px;
-	height:150px;*/
+	width:150px;
+	height:150px;
 }
+*/
 .thumb-title {
 		
 	font-size: 14px;
@@ -40,10 +42,12 @@ a{
 	text-align:center;
 
 }
+/*
 .display-image{
-	/*max-width:650px;*/
-	/*width: 75%;*/
+	max-width:650px;*/
+	/*width: 75%;
 }
+*/
 .display-image-holder{
 	/*width:650px;*/
 	width: 65%;

@@ -16,18 +16,34 @@
 		</h1>
 		
 		<?php 
+			//==========template
+			// $result = mysqli_query($con, "SELECT * FROM lab2_mugallery") or die(mysqli_error($con));
 
-			$result = mysqli_query($con, "SELECT * FROM lab2_mugallery") or die(mysqli_error($con));
+			// while($row = mysqli_fetch_array($result)){
+					
+			// 	$filename =  $row['filename'];
+			// 	$title =  $row['title'];
+			// 	$id =  $row['id'];
+			// 	echo "\n<div class=\"thumb\">";
+			// 	echo "\n\t<a href=\"display.php?id=$id\"><img src=\"images/thumbs-square/$filename\" class=\"img-thumbnail\"></a>";
+			// 	echo "<div class=\"thumb-title\">$title</div>";
+			// 	echo "\n</div>";		
+			// }
+			//==========template
+
+
+
+			$result = mysqli_query($con, "SELECT * FROM lab2_mugallery JOIN lab2_users") or die(mysqli_error($con));
 
 			while($row = mysqli_fetch_array($result)){
 					
-			$filename =  $row['filename'];
-			$title =  $row['title'];
-			$id =  $row['id'];
-			echo "\n<div class=\"thumb\">";
-			echo "\n\t<a href=\"display.php?id=$id\"><img src=\"images/thumbs-square/$filename\" class=\"img-thumbnail\"></a>";
-			echo "<div class=\"thumb-title\">$title</div>";
-			echo "\n</div>";		
+				$filename =  $row['filename'];
+				$title =  $row['title'];
+				$id =  $row['id'];
+				echo "\n<div class=\"thumb\">";
+				echo "\n\t<a href=\"display.php?id=$id\"><img src=\"images/thumbs-square/$filename\" class=\"img-thumbnail\"></a>";
+				echo "<div class=\"thumb-title\">$title</div>";
+				echo "\n</div>";		
 			}
 
 		?>

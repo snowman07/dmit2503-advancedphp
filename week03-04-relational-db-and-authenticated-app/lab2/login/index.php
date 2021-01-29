@@ -35,6 +35,10 @@ if ($login->isUserLoggedIn() == true) {
     // for demonstration purposes, we simply show the "you are logged in" view.
     include("../includes/header.php");
     include("views/logged_in.php");
+
+    //header("Location: ../admin/insert.php");
+    //include("../admin/insert.php");
+
     include("../includes/footer.php");
 
 } else {

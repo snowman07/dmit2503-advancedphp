@@ -1,11 +1,11 @@
 <?php
 
-	include("../includes/header.php");
+	//include("../includes/header.php");
 
 
 
 
-	
+
 
 	require_once('../login/classes/Login.php');
 

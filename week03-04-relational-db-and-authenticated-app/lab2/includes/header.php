@@ -71,6 +71,14 @@ include("mysql_connect.php");
             </ul>
             <ul class="nav navbar-nav navbar-right">
 
+              <!-- <li>
+                <li>
+                  <a href="<?php echo BASE_URL ?>login/index.php">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchsubmit">Login</button>
+                  </a>
+                </li>
+              </li> -->
+
               <?php session_start(); ?>
               <?php if((isset($_SESSION['dfgthbngfde34dxcxz']))):?>
   
@@ -78,7 +86,7 @@ include("mysql_connect.php");
                
               <li><a href="<?php echo BASE_URL ?>admin/logout.php">Logout</a></li>
 
-            <?php endif; ?>
+              <?php endif; ?>
 
             </ul>
           </div><!--/.nav-collapse -->

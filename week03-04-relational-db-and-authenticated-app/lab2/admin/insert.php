@@ -1,35 +1,35 @@
 <?php
 
 
-	require_once('../login/classes/Login.php');
+	// require_once('../login/classes/Login.php');
 
-	$login = new Login();
-
-
-
-	if($login->isUserLoggedIn() == true) {
-
-		include("../includes/header.php");
-		echo "Logged in as " . $_SESSION['user_name'] . " . ID is " . $_SESSION['user_id'];
-
-		//Lets create a new variable which will be the author of this blog post.
-
-		$author_id = $_SESSION['user_id'];
-
-
-	} else {
-
-		//echo "NOT logged in";
-		header("Location:../login/index.php");
-	}
+	// $login = new Login();
 
 
 
+	// if($login->isUserLoggedIn() == true) {
+
+	// 	include("../includes/header.php");
+	// 	echo "Logged in as " . $_SESSION['user_name'] . " . ID is " . $_SESSION['user_id'];
+
+	// 	//Lets create a new variable which will be the author of this blog post.
+
+	// 	$author_id = $_SESSION['user_id'];
 
 
-	// $pageTitle = "Insert";
-	// include("../includes/header.php");
-	// include("../includes/_functions.php");
+	// } else {
+
+	// 	//echo "NOT logged in";
+	// 	header("Location:../login/index.php");
+	// }
+
+
+
+
+
+	$pageTitle = "Insert";
+	include("../includes/header.php");
+	include("../includes/_functions.php");
 
 	if (isset($_POST['submit'])) {
 		$originalsFolder = "../images/originals/"; 

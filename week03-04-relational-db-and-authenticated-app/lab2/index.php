@@ -33,18 +33,39 @@
 
 
 
-			$result = mysqli_query($con, "SELECT * FROM lab2_mugallery") or die(mysqli_error($con));	//JOIN lab2_users
+			$result = mysqli_query($con, "SELECT * FROM lab2_mugallery JOIN lab2_users ON lab2_users.user_id = lab2_mugallery.author_id") or die(mysqli_error($con));
 
 			while($row = mysqli_fetch_array($result)){
 					
-				$filename =  $row['filename'];
-				$title =  $row['title'];
-				$id =  $row['id'];
-				echo "\n<div class=\"thumb\">";
-				echo "\n\t<a href=\"display.php?id=$id\"><img src=\"images/thumbs-square/$filename\" class=\"img-thumbnail\"></a>";
-				echo "<div class=\"thumb-title\">$title</div>";
-				echo "\n</div>";		
+					$filename =  $row['filename'];
+					$title =  $row['title'];
+					$id =  $row['id'];
+					echo "\n<div class=\"thumb\">";
+					echo "\n\t<a href=\"display.php?id=$id\"><img src=\"images/thumbs-square/$filename\" class=\"img-thumbnail\"></a>";
+					echo "<div class=\"thumb-title\">$title</div>";
+					echo "\n</div>";		
 			}
+
+
+
+			// $result = mysqli_query($con, "SELECT DISTINCT lab2_users.user_name  FROM lab2_mugallery JOIN lab2_users ON lab2_users.user_id = lab2_mugallery.author_id") or die(mysqli_error($con));	//JOIN lab2_users
+
+			// while($row = mysqli_fetch_array($result)){
+					
+			// 	$filename =  $row['filename'];
+			// 	$title =  $row['title'];
+			// 	$id =  $row['id'];
+
+			// 	$username = $row['user_name'];
+				
+				
+			// 	echo "\n<div class=\"thumb\">";
+			// 	echo "\n\t<a href=\"display.php?id=$id\"><img src=\"images/thumbs-square/$filename\" class=\"img-thumbnail\"></a>";
+			// 	echo "<div class=\"thumb-title\">$title</div>";
+			// 	echo "\n</div>";
+			// 	echo "<div class=\"thumb-title\">$username</div>";
+			// 	echo "\n</div>";		
+			// }
 
 		?>
 

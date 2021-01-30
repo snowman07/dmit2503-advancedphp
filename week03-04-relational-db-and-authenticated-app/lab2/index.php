@@ -33,7 +33,7 @@
 
 
 
-			$result = mysqli_query($con, "SELECT * FROM lab2_mugallery JOIN lab2_users") or die(mysqli_error($con));
+			$result = mysqli_query($con, "SELECT * FROM lab2_mugallery") or die(mysqli_error($con));	//JOIN lab2_users
 
 			while($row = mysqli_fetch_array($result)){
 					

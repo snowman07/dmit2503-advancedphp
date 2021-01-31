@@ -234,7 +234,8 @@
 			<div class="form-group">
 				<label for="submit">&nbsp;</label>
 				<input type="submit" name="submit" class="btn btn-info" value="Submit">
-				<a href="delete.php?id=<?php echo $pageid; ?>" class="btn btn-danger pull-right" onclick="return confirm('Are you sure?')">Delete</a>
+				<a href="delete.php?id=<?php echo $pageid; ?>" class="btn btn-danger pull-center" onclick="return confirm('Are you sure?')">Delete</a>
+				<a class="btn btn-danger pull-right" href="../login/index.php">Logout</a>
 
 			</div>
 

@@ -191,6 +191,7 @@
 		</h2> -->
 
 		<?php
+		
 			if($valSuccess != ""){
 				echo "<div class=\"alert alert-success\">$valSuccess</div>";
 			} 
@@ -202,10 +203,21 @@
 			<div class="form-group">
 				<!-- <label for="title"><b></b></label> -->
 				<?php 
-				$thisImage = "../images/thumbs-square/" . $filename;
-				echo "<br><img src=\"$thisImage\" class=\"img-thumbnail\">";
-
+					$thisImage = "../images/thumbs-square/" . $filename;
+					echo "<br><img src=\"$thisImage\" class=\"img-thumbnail\">";
 				?>
+
+				<!-- <?php 
+					$author_id = $row['author_id'];
+					$filename = $row['filename'];
+					$result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE author_id = '$author_id' AND filename = '$filename'" ) or die(mysqli_error($con));
+
+					while($row = mysqli_fetch_array($result)) {
+						$thisImage = "../images/thumbs-square/" . $filename;
+						echo "<br><img src=\"$thisImage\" class=\"img-thumbnail\">";
+					}
+				?> -->
+
 
 			</div>
 

@@ -74,17 +74,26 @@ include("mysql_connect.php");
               <!-- <li>
                 <li>
                   <a href="<?php echo BASE_URL ?>login/index.php">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchsubmit">Login</button>
+                    <button class="btn btn-info" type="submit" name="searchsubmit">Login</button>
                   </a>
                 </li>
               </li> -->
 
               <?php session_start(); ?>
-              <?php if((isset($_SESSION['dfgthbngfde34dxcxz']))):?>
+              <!-- from phil template -->
+              <!-- something like this:
+              if((isset($_SESSION['dfgthbngfde34dxcxz']))):
+              just add php block -->
+
+              <?php if((isset($_SESSION['user_name']))):?>
   
                  
                
-              <li><a href="<?php echo BASE_URL ?>admin/logout.php">Logout</a></li>
+              <li>
+                <a href="<?php echo BASE_URL ?>admin/logout.php">
+                  <button class="btn btn-info">Logout</button> 
+                </a>
+              </li>
 
               <?php endif; ?>
 

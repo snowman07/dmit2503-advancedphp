@@ -20,6 +20,7 @@
 	} else {
 
 		//echo "NOT logged in";
+		$_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 		header("Location:../login/index.php");
 	}
 
@@ -247,7 +248,7 @@
 				<label for="submit">&nbsp;</label>
 				<input type="submit" name="submit" class="btn btn-info" value="Submit">
 				<a href="delete.php?id=<?php echo $pageid; ?>" class="btn btn-danger pull-center" onclick="return confirm('Are you sure?')">Delete</a>
-				<a class="btn btn-danger pull-right" href="../login/index.php">Logout</a>
+				<!-- <a class="btn btn-danger pull-right" href="../login/index.php">Logout</a> -->
 
 			</div>
 

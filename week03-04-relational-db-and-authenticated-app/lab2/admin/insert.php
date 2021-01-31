@@ -20,6 +20,7 @@
 	} else {
 
 		//echo "NOT logged in";
+		$_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 		header("Location:../login/index.php");
 	}
 
@@ -138,7 +139,7 @@
 	<div class="form-group">
 		<label for="submit">&nbsp;</label>
 		<input type="submit" name="submit" class="btn btn-info" value="Submit">
-		<a class="btn btn-danger pull-right" href="../login/index.php">Logout</a>
+		<!-- <a class="btn btn-danger pull-right" href="../login/index.php">Logout</a> -->
 		<!-- <a href="index.php?logout" class="btn btn-danger pull-right">Logout</a>  -->
 	</div>
 

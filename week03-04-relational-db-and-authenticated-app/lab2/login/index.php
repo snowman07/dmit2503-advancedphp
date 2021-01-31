@@ -31,20 +31,20 @@ $login = new Login();
 
 // ... ask if we are logged in here:
 if ($login->isUserLoggedIn() == true) {
-    // the user is logged in. you can do whatever you want here.
-    // for demonstration purposes, we simply show the "you are logged in" view.
+    // // the user is logged in. you can do whatever you want here.
+    // // for demonstration purposes, we simply show the "you are logged in" view.
     include("../includes/header.php");
-    include("views/logged_in.php");
-
-    //header("Location: ../admin/insert.php");
-    //include("../admin/insert.php");
-
+    // include("views/logged_in.php");
+    
+    header("Location: " . $_SESSION['current_page']);
     include("../includes/footer.php");
 
 } else {
-    // the user is not logged in. you can do whatever you want here.
-    // for demonstration purposes, we simply show the "you are not logged in" view.
+    // // the user is not logged in. you can do whatever you want here.
+    // // for demonstration purposes, we simply show the "you are not logged in" view.
     include("../includes/header.php");
+    // include("views/not_logged_in.php");
+    
     include("views/not_logged_in.php");
     include("../includes/footer.php");
 }

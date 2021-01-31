@@ -24,7 +24,10 @@
 
 				$username = $row['user_name'];
 				//echo "Uploaded By: $username <br/>";
-				echo "<div class=\"uploadedby\">Uploaded By: $username </div>";
+				//echo "<style background-color: green;>";
+				echo "<div style=\"background-color: #2793E7; padding:10px;\" class=\"uploadedby\">Uploaded By: $username </div>";
+				//echo "</style>";
+
 
 				$authorid = $row['author_id'];
 

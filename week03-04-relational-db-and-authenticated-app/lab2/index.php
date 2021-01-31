@@ -28,7 +28,8 @@
 
 				$authorid = $row['author_id'];
 
-				$result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE author_id = $authorid LIMIT 3") or die(mysqli_error($con));	
+				$result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE author_id = $authorid") or die(mysqli_error($con));	
+				// LIMIT 3
 
 				while($row = mysqli_fetch_array($result)){
 						

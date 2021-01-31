@@ -59,8 +59,8 @@
 	}
 
 
-// UPDATE
-// Step 3:
+	// UPDATE
+	// Step 3:
 	if (isset($_POST['submit'])) {
 		
 		$boolValidateOK = 1;
@@ -91,20 +91,28 @@
 			mysqli_query($con, "UPDATE lab2_mugallery SET 
 				title = '$title',
 				description = '$description'
-				
 				WHERE id = '$pageid'")or die(mysqli_error($con));
 
+			//**************from mub */
+			$valSuccess = "Gallery Updated";
+			//**************from mub */
 		}
+	}//end if submit
 
 
-		
- 
- }//end if submit
+	///////**********from mub */
+	if(isset($_POST['delete'])){
+		//echo "delete";
+		mysqli_query($con, "DELETE FROM mublog WHERE bid = '$blog_ID'") or die(mysqli_error($con));
+		$valSuccess = "Gallery Deleted";
+		header("Location:edit.php");
+	}
+	///////**********from mub */
 
 
-//	CREATE NAV LINKS
-//*********************** */ Step 1: Create a list of links so that the user can select which entry they wish to edit.
-$result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE author_id = '$author_id' " ) or die(mysqli_error($con));
+	//	CREATE NAV LINKS
+	//*********************** */ Step 1: Create a list of links so that the user can select which entry they wish to edit.
+	$result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE author_id = '$author_id' " ) or die(mysqli_error($con));
 
 	while($row = mysqli_fetch_array($result)){
 			
@@ -143,74 +151,86 @@ $result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE author_id = '$a
 ?>
 
 <div class="row">
-  <div class="col-sm-6">
- 
+	<div class="col-sm-6">
+		<h2>Edit - <?php echo $title  ?></h2>
 
-
-<h2>Edit - <?php echo $title  ?></h2>
-<form id="myform" name="myform" method="post" action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>" enctype="multipart/form-data">
-
-		<div class="form-group">
-			<!-- <label for="title"><b></b></label> -->
+		<!-- <h2>Edit - 
 			<?php 
-			$thisImage = "../images/thumbs-square/" . $filename;
-			echo "<br><img src=\"$thisImage\" class=\"img-thumbnail\">";
-
-			 ?>
-		</div>
-
-
-
-		<div class="form-group">
-			<label for="title">Title:</label>
-			<input type="text" name="title" class="form-control" value="<?php echo $title ?>">
-			<?php
-			if($valTitle != ""){
-				echo "<div class=\"alert alert-danger\">$valTitle</div>";
-			} 
+				if ($navLinks != "") {
+					  
+				} else {
+					echo $title;
+				}
 			?>
-		</div>
-		<div class="form-group">
-			<label for="description">Description:</label>
-			<textarea name="description" class="form-control"><?php echo $description; ?></textarea>
-			<?php
-			if($valDescription != ""){
-				echo "<div class=\"alert alert-danger\">$valDescription</div>";
+		</h2> -->
+
+		<?php
+			if($valSuccess != ""){
+				echo "<div class=\"alert alert-success\">$valSuccess</div>";
 			} 
+		?>
+	
+
+		<form id="myform" name="myform" method="post" action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>" enctype="multipart/form-data">
+
+			<div class="form-group">
+				<!-- <label for="title"><b></b></label> -->
+				<?php 
+				$thisImage = "../images/thumbs-square/" . $filename;
+				echo "<br><img src=\"$thisImage\" class=\"img-thumbnail\">";
+
+				?>
+
+			</div>
+
+			<div class="form-group">
+				<label for="title">Title:</label>
+				<input type="text" name="title" class="form-control" value="<?php echo $title ?>">
+				<?php
+				if($valTitle != ""){
+					echo "<div class=\"alert alert-danger\">$valTitle</div>";
+				} 
+				?>
+			</div>
+			<div class="form-group">
+				<label for="description">Description:</label>
+				<textarea name="description" class="form-control"><?php echo $description; ?></textarea>
+				<?php
+				if($valDescription != ""){
+					echo "<div class=\"alert alert-danger\">$valDescription</div>";
+				} 
+				?>
+			</div>
+			<!-- <div class="form-group">
+				<label for="description">Image:</label>
+				<input type="file" name="myfile">
+			</div> -->
+			<div class="form-group">
+				<label for="submit">&nbsp;</label>
+				<input type="submit" name="submit" class="btn btn-info" value="Submit">
+				<a href="delete.php?id=<?php echo $pageid; ?>" class="btn btn-danger pull-right" onclick="return confirm('Are you sure?')">Delete</a>
+
+			</div>
+
+			<?php 
+				if($strValidationMessage){
+					if($boolValidateOK == 1){
+					echo "<div class=\"alert alert-info\"><p><i class=\"fas fa-check-circle fa-3x fa-pull-left\"></i> $strValidationMessage <img src=\"$thumbToShow\" width=\"50\" height=\"50\" class=\"img-thumbnailX\"> </p></div>";
+					}else{
+						echo "<div class=\"alert alert-danger\"><p><i class=\"fas fa-exclamation-triangle fa-2x fa-pull-left\"></i> $strValidationMessage </p></div>";	
+					}
+				}
 			?>
-		</div>
-		<!-- <div class="form-group">
-			<label for="description">Image:</label>
-			<input type="file" name="myfile">
-		</div> -->
-		<div class="form-group">
-			<label for="submit">&nbsp;</label>
-			<input type="submit" name="submit" class="btn btn-info" value="Submit">
-			<a href="delete.php?id=<?php echo $pageid; ?>" class="btn btn-danger pull-right" onclick="return confirm('Are you sure?')">Delete</a>
-
-		</div>
-
-<?php 
-if($strValidationMessage){
-	if($boolValidateOK == 1){
-	echo "<div class=\"alert alert-info\"><p><i class=\"fas fa-check-circle fa-3x fa-pull-left\"></i> $strValidationMessage <img src=\"$thumbToShow\" width=\"50\" height=\"50\" class=\"img-thumbnailX\"> </p></div>";
-	}else{
-		echo "<div class=\"alert alert-danger\"><p><i class=\"fas fa-exclamation-triangle fa-2x fa-pull-left\"></i> $strValidationMessage </p></div>";	
-	}
-}
-
- ?>
-
-
-	</form>
+		</form>
+	
 	</div><!-- \ left col -->
 
  	<div class="col-sm-6">
  		<h3>Select an Image to Edit</h3>
- 		<?php 
-
- 		echo $navLinks ;
- 		 ?>
+ 		
+		<?php 
+ 			echo $navLinks ;
+ 		?>
 
  	</div><!-- \ right col -->
  

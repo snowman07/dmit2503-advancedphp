@@ -4,6 +4,8 @@
 
 	require_once('../login/classes/Login.php');
 
+	//include("../includes/_functions.php");
+
 	$login = new Login();
 
 	if($login->isUserLoggedIn() == true) {
@@ -57,6 +59,30 @@
 			$pageid = $row['id']; 
 		}
 	}
+
+
+
+	// //======== Check Owner - Security against URL hacks. (dmit 2503 week 03-04)
+
+	// // This is one good way of checking for URL hacking in a page like edit. 
+
+	// // we could use this in edit: Put after we get the header, $pageid, and the author_id
+	// require_once("../includes/_functions.php");
+	
+	// $tmp = checkOwner($con, $pageid, $author_id);
+
+	// if(!$tmp){
+
+	// 	// what to do with a hacker: In this case, I just redirect them to the root. They will not have access to edit/delete anything.
+		
+	// 	header("Location:" . BASE_URL . "index.php"); // kick out the hackers
+
+	// 	//echo "<script>document.location ='" . BASE_URL . "'</script>";// poor man's redirect if the true PHP redirect above is not available
+
+	// }
+
+
+
 
 
 	// UPDATE

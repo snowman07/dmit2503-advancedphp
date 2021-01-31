@@ -2,16 +2,9 @@
 
 	//include("../includes/header.php");
 
-
-
-
-
-
 	require_once('../login/classes/Login.php');
 
 	$login = new Login();
-
-
 
 	if($login->isUserLoggedIn() == true) {
 
@@ -22,7 +15,6 @@
 
 		$author_id = $_SESSION['user_id'];
 
-
 	} else {
 
 		//echo "NOT logged in";
@@ -30,11 +22,32 @@
 	}
 
 
+	// //******************from mub**********/
+	// // retrieve the query string variable that decides which character we are editing. This is MOST important !!!
+
+	// $gallery_ID = $_GET['id'];
+
+	// if(!isset($gallery_ID )){
+	// 	//$char_ID = 1;// assign	a default value in case no query string value; this is important for later DB queries
+
+	// 	$result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE author_id = '$author_id' LIMIT 1") or die(mysqli_error($con));
+	// 	while($row = mysqli_fetch_array($result)){
+	// 		$gallery_ID  = $row['id'];
+	// 	}
+	// }
+
+	// echo $gallery_ID;
+	// //****************************/
 
 
 
 
-	
+
+
+
+
+
+	// retrieve the query string variable that decides which character we are editing. This is MOST important !!!
 
 	$pageid = $_GET['id'];
 	// this is mission critical, so in case $char_id has no value, we need to give it a default value
@@ -47,7 +60,7 @@
 
 
 // UPDATE
-
+// Step 3:
 	if (isset($_POST['submit'])) {
 		
 		$boolValidateOK = 1;
@@ -68,7 +81,8 @@
 			$valDescription = "Please fill in a proper description from 10 to 1000 characters.<br>";
 		}
 
-		if($boolValidateOK == 1){
+		//************************* */ SUCCESS:If $boolValidateOK == 1, then validation has passed
+		if($boolValidateOK == 1){ // SUCCESS
 			
 			$title = $_POST['title'];
 			$description = $_POST['description'];
@@ -89,19 +103,23 @@
 
 
 //	CREATE NAV LINKS
+//*********************** */ Step 1: Create a list of links so that the user can select which entry they wish to edit.
+$result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE author_id = '$author_id' " ) or die(mysqli_error($con));
 
-$result = mysqli_query($con, "SELECT * FROM lab2_mugallery") or die(mysqli_error($con));
+	while($row = mysqli_fetch_array($result)){
+			
+			$filename =  $row['filename'];
+			$title =  $row['title'];
+			$id =  $row['id'];
+			$navLinks .=  "\n<div class=\"thumb-small\">";
+			$navLinks .= "\n\t<a href=\"edit.php?id=$id\"><img src=\"../images/thumbs-square-small/$filename\" class=\"img-thumbnail\"></a>";
+			//$navLinks .= "\n\t<div class=\"thumb-titlex\">$title</div>";
+			$navLinks .= "\n</div>";		
+	}
 
-while($row = mysqli_fetch_array($result)){
-		
-		$filename =  $row['filename'];
-		$title =  $row['title'];
-		$id =  $row['id'];
-		$navLinks .=  "\n<div class=\"thumb-small\">";
-		$navLinks .= "\n\t<a href=\"edit.php?id=$id\"><img src=\"../images/thumbs-square-small/$filename\" class=\"img-thumbnail\"></a>";
-		//$navLinks .= "\n\t<div class=\"thumb-titlex\">$title</div>";
-		$navLinks .= "\n</div>";		
-}
+
+
+
 
 // STEP 2: RETRIEVE DATA FOR SELECTED ITEM AND PREPOPULATE THE FORM BELOW
 

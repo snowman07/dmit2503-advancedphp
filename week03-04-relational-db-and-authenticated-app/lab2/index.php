@@ -13,63 +13,40 @@
 	<div class="col-md-12 clearfix">
 		<h1>
 			<?php echo APP_NAME; // see includes/mysql_connect for this constant ?>
-		</h1>
+		</h1><br /><br />
 		
 		<?php 
-			//==========template
-			// $result = mysqli_query($con, "SELECT * FROM lab2_mugallery") or die(mysqli_error($con));
-
-			// while($row = mysqli_fetch_array($result)){
-					
-			// 	$filename =  $row['filename'];
-			// 	$title =  $row['title'];
-			// 	$id =  $row['id'];
-			// 	echo "\n<div class=\"thumb\">";
-			// 	echo "\n\t<a href=\"display.php?id=$id\"><img src=\"images/thumbs-square/$filename\" class=\"img-thumbnail\"></a>";
-			// 	echo "<div class=\"thumb-title\">$title</div>";
-			// 	echo "\n</div>";		
-			// }
-			//==========template
 
 
+			$userresult = mysqli_query($con, "SELECT DISTINCT author_id, lab2_users.user_name FROM lab2_mugallery JOIN lab2_users ON lab2_users.user_id = lab2_mugallery.author_id ") or die(mysqli_error($con)); //JOIN lab2_users
 
-			$result = mysqli_query($con, "SELECT * FROM lab2_mugallery JOIN lab2_users ON lab2_users.user_id = lab2_mugallery.author_id") or die(mysqli_error($con));
+			while($row = mysqli_fetch_array($userresult)){
 
-			while($row = mysqli_fetch_array($result)){
-					
+				$username = $row['user_name'];
+				//echo "Uploaded By: $username <br/>";
+				echo "<div class=\"uploadedby\">Uploaded By: $username </div>";
+
+				$authorid = $row['author_id'];
+
+				$result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE author_id = $authorid LIMIT 3") or die(mysqli_error($con));	
+
+				while($row = mysqli_fetch_array($result)){
+						
 					$filename =  $row['filename'];
 					$title =  $row['title'];
 					$id =  $row['id'];
+					
 					echo "\n<div class=\"thumb\">";
 					echo "\n\t<a href=\"display.php?id=$id\"><img src=\"images/thumbs-square/$filename\" class=\"img-thumbnail\"></a>";
 					echo "<div class=\"thumb-title\">$title</div>";
 					echo "\n</div>";		
+				}
+				
+				echo "<br style=\"clear:both\"><br /><br /><br />";
+				//echo "<br>";
 			}
-
-
-
-			// $result = mysqli_query($con, "SELECT DISTINCT lab2_users.user_name  FROM lab2_mugallery JOIN lab2_users ON lab2_users.user_id = lab2_mugallery.author_id") or die(mysqli_error($con));	//JOIN lab2_users
-
-			// while($row = mysqli_fetch_array($result)){
-					
-			// 	$filename =  $row['filename'];
-			// 	$title =  $row['title'];
-			// 	$id =  $row['id'];
-
-			// 	$username = $row['user_name'];
-				
-				
-			// 	echo "\n<div class=\"thumb\">";
-			// 	echo "\n\t<a href=\"display.php?id=$id\"><img src=\"images/thumbs-square/$filename\" class=\"img-thumbnail\"></a>";
-			// 	echo "<div class=\"thumb-title\">$title</div>";
-			// 	echo "\n</div>";
-			// 	echo "<div class=\"thumb-title\">$username</div>";
-			// 	echo "\n</div>";		
-			// }
-
 		?>
-
-
+		
 		<br style="clear:both">
 	</div>
 	

@@ -55,7 +55,7 @@
 	$pageid = $_GET['id'];
 	// this is mission critical, so in case $char_id has no value, we need to give it a default value
 	if(!isset($pageid)){
-		$default = mysqli_query($con, "SELECT id FROM lab2_mugallery LIMIT 1") or die(mysqli_error($con));
+		$default = mysqli_query($con, "SELECT id FROM lab2_mugallery WHERE author_id = '$author_id' LIMIT 1") or die(mysqli_error($con));
 		while($row = mysqli_fetch_array($default)){
 			$pageid = $row['id']; 
 		}

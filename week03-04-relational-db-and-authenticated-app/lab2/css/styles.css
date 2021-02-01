@@ -68,9 +68,9 @@ a{
 	z-index: -2;
 }
 .display-heading{
-	color:#fff;
-	padding:0px 10px !important;
-	margin: 0px !important;
+	color: black;
+	padding: 20px 10px ;
+	margin: 0px ;
 	position: relative;
 	top:50px;
 	/*background-color: #000;*/

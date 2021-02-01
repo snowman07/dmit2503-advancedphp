@@ -46,7 +46,6 @@ include ("includes/header.php");
 ?>
 <div class="row">
 	<div class="col-md-12">
-	
 		<?php 
 		/*$id = $_GET['id'];*/
 
@@ -55,62 +54,55 @@ include ("includes/header.php");
 		<?php while($row = mysqli_fetch_array($result)): ?>
 				
 				
-				<h2 class="display-heading"><?php echo $row['title']; ?></h2>
+			<h2 class="display-heading"><?php echo $row['title']; ?></h2>
+			
+			
+			<div class="display-image-holder">
+				<img src="images/display/<?php echo $row['filename'] ?>" class="display-image img-responsive">
 				
-				
-				<div class="display-image-holder">
-					<img src="images/display/<?php echo $row['filename'] ?>" class="display-image img-responsive">
-					
-				</div>
-				<div class="display-info">
+			</div>
+			<div class="display-info">
 
-					<h3><?php echo $row['title']; ?></h3>
+				<h3><?php echo $row['title']; ?></h3>
 
-					<div class="text-primary display-description"><?php echo nl2br($row['description']) ?></div>
+				<div class="text-primary display-description"><?php echo nl2br($row['description']) ?></div>
 
-					<?php if($row['emake']): ?>
-						<b>Camera Brand:</b> <?php echo $row['emake'] ?><br>
-					<?php endif; ?>
+				<?php if($row['emake']): ?>
+					<b>Camera Brand:</b> <?php echo $row['emake'] ?><br>
+				<?php endif; ?>
 
-					<?php if($row['emodel']): ?>
-						<b>Camera Model:</b> <?php echo $row['emodel'] ?><br>
-					<?php endif; ?>
+				<?php if($row['emodel']): ?>
+					<b>Camera Model:</b> <?php echo $row['emodel'] ?><br>
+				<?php endif; ?>
 
-					<?php if($row['edate']): ?>
-						<?php 
-							$timedate = strtotime($row['edate']);// fixes niggly mysql to php date conversion problems.
-						 ?>
-						<b>Date:</b> <?php echo date("F j, Y", $timedate); ?><br>
-					<?php endif; ?>
+				<?php if($row['edate']): ?>
+					<?php 
+						$timedate = strtotime($row['edate']);// fixes niggly mysql to php date conversion problems.
+						?>
+					<b>Date:</b> <?php echo date("F j, Y", $timedate); ?><br>
+				<?php endif; ?>
 
 
-					<?php if($row['eexposuretime']): ?>
-						<b>Exposure:</b> <?php echo $row['eexposuretime'] ?><br>
-					<?php endif; ?>
+				<?php if($row['eexposuretime']): ?>
+					<b>Exposure:</b> <?php echo $row['eexposuretime'] ?><br>
+				<?php endif; ?>
 
-					<?php if($row['efnumber']): ?>
-						<b>F number:</b> <?php echo $row['efnumber'] ?><br>
-					<?php endif; ?>
+				<?php if($row['efnumber']): ?>
+					<b>F number:</b> <?php echo $row['efnumber'] ?><br>
+				<?php endif; ?>
 
-					<?php if($row['eiso']): ?>
-						<b>ISO:</b> <?php echo $row['eiso'] ?><br>
-					<?php endif; ?>
-
-				
-
-
-
-				</div>
-					
+				<?php if($row['eiso']): ?>
+					<b>ISO:</b> <?php echo $row['eiso'] ?><br>
+				<?php endif; ?>
+			</div>			
 		<?php endwhile; ?>
-
-
-
 	</div>
-
+	<!--END OF col-md-12 -->
 </div>
 <div class="nextPrevBtnz"><?php echo $nextPrevButtons; ?></div>
-<?php
 
-include ("includes/footer.php");
+
+
+<?php
+	include ("includes/footer.php");
 ?>

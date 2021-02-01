@@ -97,7 +97,7 @@
 			if (isset($showAll)) {
 
 				//echo "Uploaded by: $username";
-				echo "<div style=\"background-color: #2793E7; padding:10px;\" class=\"uploadedby\">Uploaded By: $username2 </div>";
+				echo "<div style=\"background-color: #2793E7; padding:10px;\" class=\"uploadedby\">Uploaded By: $username2gti  </div>";
 				$authorid = $row['author_id'];
 
 				$result3 = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE author_id = $showAll") or die(mysqli_error($con));	

@@ -1,47 +1,43 @@
 <?php
-include ("includes/mysql_connect.php");
-$id = $_GET['id'];
-if(!is_numeric($id)){// just a catchall if the ID is messed with
-	header("Location:index.php");
-}
-$result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE id = '$id'") or die(mysqli_error($con));
-while($row = mysqli_fetch_array($result)){
-	$pageTitle = $row['title'];
-}
+	include ("includes/mysql_connect.php");
+	$id = $_GET['id'];
+	if(!is_numeric($id)){// just a catchall if the ID is messed with
+		header("Location:index.php");
+	}
+	$result = mysqli_query($con, "SELECT * FROM lab2_mugallery WHERE id = '$id'") or die(mysqli_error($con));
+	while($row = mysqli_fetch_array($result)){
+		$pageTitle = $row['title'];
+	}
 
 
-include ("includes/header.php");
+	include ("includes/header.php");
 
 
-// NEXT PREVIOUS BUTTONS
+	// NEXT PREVIOUS BUTTONS
 
-//select * from foo where id = (select min(id) from foo where id > 4)
-// NEXT/PREVIOUS LINKS
-		$next= mysqli_query($con,"SELECT id FROM lab2_mugallery WHERE id = (select min(id) from lab2_mugallery where id > '$id') LIMIT 1");
-		while ($row = mysqli_fetch_array($next)){
-			$idNext =  $row['id'];
+	//select * from foo where id = (select min(id) from foo where id > 4)
+	// NEXT/PREVIOUS LINKS
+	$next= mysqli_query($con,"SELECT id FROM lab2_mugallery WHERE id = (select min(id) from lab2_mugallery where id > '$id') LIMIT 1");
+	while ($row = mysqli_fetch_array($next)){
+		$idNext =  $row['id'];
 
-		}
-		$prev= mysqli_query($con,"SELECT id FROM lab2_mugallery WHERE id = (select max(id) from lab2_mugallery where id < '$id') LIMIT 1");
-		while ($row = mysqli_fetch_array($prev)){
-			$idPrev =  $row['id'];
+	}
+	$prev= mysqli_query($con,"SELECT id FROM lab2_mugallery WHERE id = (select max(id) from lab2_mugallery where id < '$id') LIMIT 1");
+	while ($row = mysqli_fetch_array($prev)){
+		$idPrev =  $row['id'];
 
-		}
-		
-		if($idPrev){
-			$nextPrevButtons .=  " <a href=\"display.php?id=$idPrev\" class=\"btn btn-info btn-xs\">Previous</a> ";
-		}else{
-			$nextPrevButtons .=  " <a href=\"\" class=\"btn btn-default btn-xs\" disabled>Previous</a> ";
-		}
-		if($idNext){
-			$nextPrevButtons .= "<a href=\"display.php?id=$idNext\" class=\"btn btn-info btn-xs\">Next</a>";
-		}else{
-			$nextPrevButtons .= "<a href=\"\" class=\"btn btn-default btn-xs\" disabled>Next</a>";
-		}
-
-
-
-
+	}
+	
+	if($idPrev){
+		$nextPrevButtons .=  " <a href=\"display.php?id=$idPrev\" class=\"btn btn-info btn-xs\">Previous</a> ";
+	}else{
+		$nextPrevButtons .=  " <a href=\"\" class=\"btn btn-default btn-xs\" disabled>Previous</a> ";
+	}
+	if($idNext){
+		$nextPrevButtons .= "<a href=\"display.php?id=$idNext\" class=\"btn btn-info btn-xs\">Next</a>";
+	}else{
+		$nextPrevButtons .= "<a href=\"\" class=\"btn btn-default btn-xs\" disabled>Next</a>";
+	}
 
 ?>
 <div class="row">
@@ -66,6 +62,13 @@ include ("includes/header.php");
 				<h3><?php echo $row['title']; ?></h3>
 
 				<div class="text-primary display-description"><?php echo nl2br($row['description']) ?></div>
+
+				<!-- <div>
+					<?php
+						//echo "Rating should be right here!!";
+						include("admin/ratings.php");
+					?>
+				</div> -->
 
 				<?php if($row['emake']): ?>
 					<b>Camera Brand:</b> <?php echo $row['emake'] ?><br>
@@ -99,6 +102,7 @@ include ("includes/header.php");
 	</div>
 	<!--END OF col-md-12 -->
 </div>
+<!-- END OF row -->
 <div class="nextPrevBtnz"><?php echo $nextPrevButtons; ?></div>
 
 

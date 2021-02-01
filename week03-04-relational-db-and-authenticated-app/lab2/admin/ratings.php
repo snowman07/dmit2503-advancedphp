@@ -1,3 +1,6 @@
+
+<h1>Ratings</h1>
+
 <?php
 
     // integrate the auth (Login) script
@@ -62,5 +65,3 @@
 ?>
 
 <form action=""></form>
-
-<h1>Ratings</h1>

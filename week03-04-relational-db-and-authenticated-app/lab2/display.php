@@ -63,12 +63,12 @@
 
 				<div class="text-primary display-description"><?php echo nl2br($row['description']) ?></div>
 
-				<!-- <div>
+				<div>
 					<?php
 						//echo "Rating should be right here!!";
 						include("admin/ratings.php");
 					?>
-				</div> -->
+				</div>
 
 				<?php if($row['emake']): ?>
 					<b>Camera Brand:</b> <?php echo $row['emake'] ?><br>

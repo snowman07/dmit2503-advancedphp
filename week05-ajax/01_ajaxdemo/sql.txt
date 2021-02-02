@@ -1,0 +1,10 @@
+--
+-- Table structure for table `logins_ajax`
+--
+
+CREATE TABLE IF NOT EXISTS `logins_ajax` (
+  `usernames` varchar(100) NOT NULL,
+  `passwords` varchar(200) NOT NULL,
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;

@@ -2,7 +2,7 @@
 
 include("admin/dbconnect.php");
 
-$username = $_REQUEST['username'];
+$username = $_REQUEST['username']; // $_REQUEST
 $password = $_REQUEST['password']; 
 /*
 LISTS ALL THE INFO IN THE DB

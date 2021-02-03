@@ -2,7 +2,7 @@
 	
 	// PHP5 Implementation - uses MySQLi.
 	// mysqli('localhost', 'yourUsername', 'yourPassword', 'yourDatabase');
-	$db = new mysqli('localhost', '' ,'', ''); // EDIT HERE
+	$db = new mysqli('localhost', 'adomingo4' ,'PDsbNesMr3sSS79', 'adomingo4_dmit2503'); // EDIT HERE
 	
 	if(!$db) {
 		// Show error if we cannot connect.

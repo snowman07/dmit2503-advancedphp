@@ -8,6 +8,39 @@
 $(document).ready(function(){
 
 /* this will be done in class */
+    //console.log("ready to go ...");
+
+    $('a.ajax-link').click(function() {
+        //console.log("clicked");
+
+        // we'll use these HTML data-attributes. Ignored by HTML, but can be used to move data to JS
+        // data-x="genre" data-y="rock"
+
+        //console.log($(this).attr('data-x') + ";" + $(this).attr('data-y'));
+
+
+        $.ajax({
+
+            type:"POST",
+            url: "display.php",
+            data:{
+                displayby:$(this).attr('data-x'),
+                displayvalue:$(this).attr('data-y')
+            },
+            success: function(response) {
+
+                $("#sideDisplay").hide();
+                $("#sideDisplay").html(response);
+                $("#sideDisplay").fadeIn();
+
+                // if that works, on your own ... finish all the links
+            }
+
+        });
+        //ENDOF $.ajax
+
+    }); 
+    //ENDOF ajax-link.click
 
 
 });
@@ -53,26 +86,26 @@ $(document).ready(function(){
     </div>
     <p>
     <b>Genre: </b><br />
-    <a href="#">Rock</a> | 
-	<a href="#">Jazz</a> | 
-	<a href="#">Blues</a> | 
-	<a href="#">Pop</a>
+    <a href="#" class="ajax-link" data-x="genre" data-y="rock">Rock</a> | 
+	<a href="#" class="ajax-link" data-x="genre" data-y="jazz">Jazz</a> | 
+	<a href="#" class="ajax-link" data-x="genre" data-y="blues">Blues</a> | 
+	<a href="#" class="ajax-link" data-x="genre" data-y="pop">Pop</a>
     </p>
     <p>
     <b>Decades: </b><br />
 	 
-    <a href="#">70's</a> | 
-    <a href="#">80's</a> | 
-	<a href="#">90's</a> | 
-    <a href="#">2000's</a>
+    <a href="#" class="ajax-link" data-x="year" data-y="197%">70's</a> | 
+    <a href="#" class="ajax-link" data-x="year" data-y="198%">80's</a> | 
+	<a href="#" class="ajax-link" data-x="year" data-y="199%">90's</a> | 
+    <a href="#" class="ajax-link" data-x="year" data-y="200%">2000's</a>
     </p>
     <p>
      <b>Labels: </b><br />
 	 
-    <a href="#">Atlantic</a> | 
-    <a href="#">Epic</a> | 
+    <a href="#" class="ajax-link" data-x="label" data-y="atlantic">Atlantic</a> | 
+    <a href="#" class="ajax-link" data-x="label" data-y="epic">Epic</a> | 
 	
-    <a href="#">Columbia</a>
+    <a href="#" class="ajax-link" data-x="label" data-y="columbia">Columbia</a>
     </p>
     
       <div id="sideDisplay">

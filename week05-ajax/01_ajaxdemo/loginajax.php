@@ -36,10 +36,12 @@
     // WE CAN CALL THIS FROM YOUR HTML LINKS
     // example: <a href="#" onclick="sndReq('genre','Rock');
 
-    function sndReq(param1,param2) {
+    function sndReq(username,password) {
+
+        http.open('get', 'loginprocess.php?username='+username+'&password='+password);
         
-        http.open('get', 'dynamicpage.php?getvar1='+param1+'&getvar1='+param2);
-        //document.location =('get', 'dynamicpage.php?getvar1='+param1+'&getvar1='+param2); // just for testing: this will redirect you to dynamic page where you should be able to see the query. Make sure you turn this line OFF when done !
+        //document.location =('get', 'loginprocess.php?username='+username+'&password='+password); // just for testing: this will redirect you to dynamic page where you should be able to see the query. Make sure you turn this line OFF when done !
+        
         http.onreadystatechange = handleResponse;
         http.send(null);
     }

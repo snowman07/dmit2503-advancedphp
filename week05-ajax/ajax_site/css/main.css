@@ -8,12 +8,12 @@ body,
 		height: 100%;
 
 		}
-	body {
+	/* body {
 		
 		
 		
 	
-	}
+	} */
 	#outerWrap {
 		width:980px;
 		margin:0 auto;
@@ -68,6 +68,8 @@ body,
 
 			font-weight: normal;
 			color: #900;
+			word-wrap: break-word; /*For long words in CSS*/
+			
 		}
 		.cdImage {
 			float: right;

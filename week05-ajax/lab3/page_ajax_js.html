@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My AJAX Empowered Site</title>
+        <link rel="stylesheet" href="css/main.css" type="text/css" />
+
+        <script type="text/javascript">
+            function createRequestObject() {
+                var ro;
+                var browser = navigator.appName;
+                if(browser == "Microsoft Internet Explorer"){
+                    ro = new ActiveXObject("Microsoft.XMLHTTP");
+                }else{
+                    ro = new XMLHttpRequest();
+                }
+                return ro;
+            }
+            var http = createRequestObject();
+
+            // HERE IS THE MAIN FUNCTION 
+            // WE CAN CALL THIS FROM YOUR HTML LINKS
+            // example: <a href="#" onclick="sndReq('genre','Rock');
+
+            function sndReq(x,y) {
+                http.open('get', 'display.php?displayby='+x+'&displayvalue='+y);
+                
+                //document.location =('get', 'display.php?displayby='+x+'&displayvalue='+y); // just for testing: this will redirect you to dynamic page where you should be able to see the query. Make sure you turn this line OFF when done !
+                
+                http.onreadystatechange = handleResponse;
+                http.send(null);
+            }
+            // THIS FUNCTION THEN RECEIVES THE INFO FROM THE PROCESSING PAGE AND WRITES IT TO THE CURRENT STATIC PAGE
+            function handleResponse() {
+                if(http.readyState == 4){
+                
+                    /* 
+                    ReadyState Values
+                                0	The request is not initialized
+                                1	The request has been set up
+                                2	The request has been sent
+                                3	The request is in process
+                                4	The request is complete                  
+                        */
+                    var response = http.responseText;
+                    // YOU MUST HAVE AN EMPTY <div> SOMEWHERE WHERE WE USE THE innerHTML METHOD OF JS TO WRITE THE NEW CONTENT.
+                    document.getElementById('sideDisplay').innerHTML = response;   
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <div id="outerWrap">
+            <div id="wrap">
+                <div id="header"><h1>Vivamus Ullamcorper Consequat </h1></div>
+                <div id="nav">
+                    <a href="#">Vivamus</a> | 
+                    <a href="#">Ullamcorper</a> | 
+                    <a href="#">Consequat</a> | 
+                    <a href="#">Sollicitudin</a> | 
+                    <a href="#">Morbi Orci Leo</a>	
+                </div>
+
+                <div id="main">
+                    <div id="mainPadding">
+
+                        <h2>Lorem ipsum dolor sit amet</h2>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis sollicitudin faucibus. Morbi orci leo, blandit quis rutrum eget, consequat ut felis. Phasellus tortor sem, scelerisque at congue eget, dapibus eget eros. Cras at scelerisque est. Duis vel nisi in lacus consectetur dictum et sit amet dolor. Nunc tincidunt, ligula a dictum eleifend, neque magna lobortis nulla, ac tempus risus nisi non odio. Fusce blandit magna sit amet purus ultrices blandit. Vivamus ullamcorper consequat sagittis. Aliquam a dui ut turpis gravida iaculis. Nullam turpis orci, rhoncus consequat faucibus in, posuere ut odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                        <p>In hac habitasse platea dictumst. Etiam quam odio, auctor et gravida eu, tempor eu metus. Donec tincidunt purus ac eros ornare commodo. Vivamus eu nisi sem. Cras vestibulum suscipit arcu ut lobortis. Mauris non tortor leo. Phasellus iaculis dapibus adipiscing.</p>
+
+                        <p>Praesent cursus augue eget nibh congue imperdiet. Donec malesuada vehicula scelerisque. Sed vestibulum, ipsum sit amet posuere viverra, massa arcu tincidunt diam, nec sollicitudin turpis metus at ipsum. Aliquam erat volutpat. Vestibulum scelerisque eleifend pellentesque. Nulla tempor, ipsum at porta dictum, turpis libero accumsan elit, aliquet consectetur mauris elit id velit. Nunc urna turpis, vulputate id malesuada eu, euismod at nisl. Mauris rhoncus libero a dui volutpat a placerat dolor convallis. Proin fermentum purus eu urna porta nec tempus magna convallis. Maecenas ac risus diam. </p>
+
+                        <h2>Lobortis Sollicitudin Faucibus</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis sollicitudin faucibus. Morbi orci leo, blandit quis rutrum eget, consequat ut felis. Phasellus tortor sem, scelerisque at congue eget, dapibus eget eros. Cras at scelerisque est. Duis vel nisi in lacus consectetur dictum et sit amet dolor. Nunc tincidunt, ligula a dictum eleifend, neque magna lobortis nulla, ac tempus risus nisi non odio. Fusce blandit magna sit amet purus ultrices blandit. Vivamus ullamcorper consequat sagittis. Aliquam a dui ut turpis gravida iaculis. Nullam turpis orci, rhoncus consequat faucibus in, posuere ut odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                        <p>In hac habitasse platea dictumst. Etiam quam odio, auctor et gravida eu, tempor eu metus. Donec tincidunt purus ac eros ornare commodo. Vivamus eu nisi sem. Cras vestibulum suscipit arcu ut lobortis. Mauris non tortor leo. Phasellus iaculis dapibus adipiscing.</p>
+
+                        <p>Praesent cursus augue eget nibh congue imperdiet. Donec malesuada vehicula scelerisque. Sed vestibulum, ipsum sit amet posuere viverra, massa arcu tincidunt diam, nec sollicitudin turpis metus at ipsum. Aliquam erat volutpat. Vestibulum scelerisque eleifend pellentesque. Nulla tempor, ipsum at porta dictum, turpis libero accumsan elit, aliquet consectetur mauris elit id velit. Nunc urna turpis, vulputate id malesuada eu, euismod at nisl. Mauris rhoncus libero a dui volutpat a placerat dolor convallis. Proin fermentum purus eu urna porta nec tempus magna convallis. Maecenas ac risus diam. </p>
+
+                    </div>
+                    <!-- END OF mainPadding -->
+                </div>
+                <!-- END OF main -->
+                <div id="sidebar">
+                    <div id="sideBarHeading">
+                        CD Shop
+                    </div>
+
+                    <p>
+                        <b>Genre: </b><br />
+                        <a href="#" onclick="sndReq('genre','rock')">Rock</a> | 
+                        <a href="#" onclick="sndReq('genre','jazz')">Jazz</a> | 
+                        <a href="#" onclick="sndReq('genre','blues')">Blues</a> | 
+                        <a href="#" onclick="sndReq('genre','pop')">Pop</a>
+                    </p>
+                    <p>
+                        <b>Decades: </b><br />
+                    
+                        <a href="#" onclick="sndReq('year','197%')">70's</a> | 
+                        <a href="#" onclick="sndReq('year','198%')">80's</a> | 
+                        <a href="#" onclick="sndReq('year','199%')">90's</a> | 
+                        <a href="#" onclick="sndReq('year','200%')">2000's</a>
+                    </p>
+                    <p>
+                        <b>Labels: </b><br />
+                        
+                        <a href="#" onclick="sndReq('label','atlantic')">Atlantic</a> | 
+                        <a href="#" onclick="sndReq('label','epic')">Epic</a> | 
+                        
+                        <a href="#" onclick="sndReq('label','columbia')">Columbia</a>
+                    </p>
+                    
+                    <div id="sideDisplay">
+                    
+                    </div>
+
+                </div>
+                <!-- END OF sidebar -->
+            </div>
+            <!-- END OF wrap -->
+            <br style="clear:both;" />	
+        </div>
+        <!-- ENDOF outerWrap -->
+    </body>
+</html>
+

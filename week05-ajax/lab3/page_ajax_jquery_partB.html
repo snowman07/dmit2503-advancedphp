@@ -51,6 +51,20 @@
             //=======================================================//
             //=======================================================//
             //================== MAIN CONTENT AREA ==================//  
+            // $('a.main-home').click(function() {
+            //     $.ajax({
+            //         type: "GET",
+            //         //url: "",
+            //         success:function(response) {
+            //             $("#mainPadding").hide();
+            //             $("#mainPadding").html(response);
+            //             $("#mainPadding").fadeIn();
+            //         }
+            //     });
+            //     return false;
+            // });
+
+
             $('a.main-link').click(function() {
                 $.ajax({
                     type: "GET",
@@ -85,7 +99,7 @@
             <!-- //================== MAIN CONTENT AREA ==================// -->
             <div id="header"><h1>LAB3: AJAX </h1></div>
             <div id="nav">
-                <a href="page_ajax_jquery_partB.html">Home</a> |
+                <a href="page_ajax_jquery_partB.html" class="main-home">Home</a> |
                 <a href="#" class="main-link" data-x="id" data-y="5">Alpha</a> | 
                 <a href="#" class="main-link" data-x="id" data-y="6">Bravo</a> | 
                 <a href="#" class="main-link" data-x="id" data-y="7">Charlie</a> | 

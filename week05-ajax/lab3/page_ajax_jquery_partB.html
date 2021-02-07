@@ -10,6 +10,11 @@
             /* this will be done in class */
             //console.log("ready to go ...");
 
+            //==================================================//
+            //==================================================//
+            //================== SIDEBAR AREA ==================//
+            
+
             $('a.ajax-link').click(function() {
                 //console.log("clicked");
 
@@ -26,6 +31,7 @@
                         displayby:$(this).attr('data-x'),
                         displayvalue:$(this).attr('data-y')
                     },
+                    //using Chrome Inspector >> Networ >> display.php >> see the query in action!!
                     success: function(response) {
 
                         $("#sideDisplay").hide();
@@ -36,43 +42,75 @@
                     }
                 });
                 //ENDOF $.ajax
+                return false;
             }); 
-            //ENDOF ajax-link.click
+            //================== END OF SIDEBAR AREA ==================//
+            //=========================================================//
+            //=========================================================//
+
+            //=======================================================//
+            //=======================================================//
+            //================== MAIN CONTENT AREA ==================//  
+            $('a.main-link').click(function() {
+                $.ajax({
+                    type: "GET",
+                    url: "main_content_partB.php",
+                    data: {
+                        displayby: $(this).attr('data-x'),
+                        displayvalue: $(this).attr('data-y')
+                    },
+                    success: function(response) {
+                        $("#mainPadding").hide();
+                        $("#mainPadding").html(response);
+                        $("#mainPadding").fadeIn();
+                    }
+                });
+                //ENDOF $.ajax
+                return false;
+            });
+            //================== END OF MAIN CONTENT AREA ==================//
+            //==============================================================//
+            //==============================================================//
+
         });
+        // ENDOF .ready()
     </script>
 </head>
 
 <body>
     <div id="outerWrap">
         <div id="wrap">
-            <div id="header"><h1>Vivamus Ullamcorper Consequat </h1></div>
+            <!-- //=======================================================// -->
+            <!-- //=======================================================// -->
+            <!-- //================== MAIN CONTENT AREA ==================// -->
+            <div id="header"><h1>LAB3: AJAX </h1></div>
             <div id="nav">
-                <a href="#">Vivamus</a> | 
-                <a href="#">Ullamcorper</a> | 
-                <a href="#">Consequat</a> | 
-                <a href="#">Sollicitudin</a> | 
-                <a href="#">Morbi Orci Leo</a>	
+                <a href="page_ajax_jquery_partB.html">Home</a> |
+                <a href="#" class="main-link" data-x="id" data-y="5">Alpha</a> | 
+                <a href="#" class="main-link" data-x="id" data-y="6">Bravo</a> | 
+                <a href="#" class="main-link" data-x="id" data-y="7">Charlie</a> | 
+                <a href="#" class="main-link" data-x="id" data-y="8">Delta</a> | 
+                <a href="#" class="main-link" data-x="id" data-y="9">Echo</a>
             </div>
 
             <div id="main">
                 <div id="mainPadding">
-                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <h2>Phonetic Alphabet</h2>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis sollicitudin faucibus. Morbi orci leo, blandit quis rutrum eget, consequat ut felis. Phasellus tortor sem, scelerisque at congue eget, dapibus eget eros. Cras at scelerisque est. Duis vel nisi in lacus consectetur dictum et sit amet dolor. Nunc tincidunt, ligula a dictum eleifend, neque magna lobortis nulla, ac tempus risus nisi non odio. Fusce blandit magna sit amet purus ultrices blandit. Vivamus ullamcorper consequat sagittis. Aliquam a dui ut turpis gravida iaculis. Nullam turpis orci, rhoncus consequat faucibus in, posuere ut odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    <p>The International Phonetic Alphabet (IPA) is an alphabetic system of phonetic notation based primarily on the Latin script. It was devised by the International Phonetic Association in the late 19th century as a standardized representation of speech sounds in written form. The IPA is used by lexicographers, foreign language students and teachers, linguists, speech-language pathologists, singers, actors, constructed language creators and translators.</p>
 
-                    <p>In hac habitasse platea dictumst. Etiam quam odio, auctor et gravida eu, tempor eu metus. Donec tincidunt purus ac eros ornare commodo. Vivamus eu nisi sem. Cras vestibulum suscipit arcu ut lobortis. Mauris non tortor leo. Phasellus iaculis dapibus adipiscing.</p>
+                    <p>The IPA is designed to represent those qualities of speech that are part of lexical (and to a limited extent prosodic) sounds in oral language: phones, phonemes, intonation and the separation of words and syllables. To represent additional qualities of speech, such as tooth gnashing, lisping, and sounds made with a cleft lip and cleft palate, an extended set of symbols, the extensions to the International Phonetic Alphabet, may be used.</p>
 
-                    <p>Praesent cursus augue eget nibh congue imperdiet. Donec malesuada vehicula scelerisque. Sed vestibulum, ipsum sit amet posuere viverra, massa arcu tincidunt diam, nec sollicitudin turpis metus at ipsum. Aliquam erat volutpat. Vestibulum scelerisque eleifend pellentesque. Nulla tempor, ipsum at porta dictum, turpis libero accumsan elit, aliquet consectetur mauris elit id velit. Nunc urna turpis, vulputate id malesuada eu, euismod at nisl. Mauris rhoncus libero a dui volutpat a placerat dolor convallis. Proin fermentum purus eu urna porta nec tempus magna convallis. Maecenas ac risus diam. </p>
-
-                    <h2>Lobortis Sollicitudin Faucibus</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis sollicitudin faucibus. Morbi orci leo, blandit quis rutrum eget, consequat ut felis. Phasellus tortor sem, scelerisque at congue eget, dapibus eget eros. Cras at scelerisque est. Duis vel nisi in lacus consectetur dictum et sit amet dolor. Nunc tincidunt, ligula a dictum eleifend, neque magna lobortis nulla, ac tempus risus nisi non odio. Fusce blandit magna sit amet purus ultrices blandit. Vivamus ullamcorper consequat sagittis. Aliquam a dui ut turpis gravida iaculis. Nullam turpis orci, rhoncus consequat faucibus in, posuere ut odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-
-                    <p>In hac habitasse platea dictumst. Etiam quam odio, auctor et gravida eu, tempor eu metus. Donec tincidunt purus ac eros ornare commodo. Vivamus eu nisi sem. Cras vestibulum suscipit arcu ut lobortis. Mauris non tortor leo. Phasellus iaculis dapibus adipiscing.</p>
-
-                    <p>Praesent cursus augue eget nibh congue imperdiet. Donec malesuada vehicula scelerisque. Sed vestibulum, ipsum sit amet posuere viverra, massa arcu tincidunt diam, nec sollicitudin turpis metus at ipsum. Aliquam erat volutpat. Vestibulum scelerisque eleifend pellentesque. Nulla tempor, ipsum at porta dictum, turpis libero accumsan elit, aliquet consectetur mauris elit id velit. Nunc urna turpis, vulputate id malesuada eu, euismod at nisl. Mauris rhoncus libero a dui volutpat a placerat dolor convallis. Proin fermentum purus eu urna porta nec tempus magna convallis. Maecenas ac risus diam. </p>
                 </div>
             </div>
-            <!-- END OF main -->
+            <!-- //================== END OF MAIN CONTENT AREA ==================// -->
+            <!-- //==============================================================// -->
+            <!-- //==============================================================// -->
+
+            <!-- //==================================================// -->
+            <!-- //==================================================// -->
+            <!-- //================== SIDEBAR AREA ==================// -->
+            
             <div id="sidebar">
                 <div id="sideBarHeading">
                     CD Shop
@@ -103,13 +141,14 @@
                 <div id="sideDisplay">            
                 </div>
             </div>
-            <!-- ENDOF sidebar -->
+            <!-- //================== END OF SIDEBAR AREA ==================// -->
+            <!-- //=========================================================// -->
+            <!-- //=========================================================// -->
         </div>
-
+        <!-- ENDOF wrap -->
         <br style="clear:both;" />	
-
     </div>
-
+    <!-- ENDOF outerWrap -->
 </body>
 </html>
 

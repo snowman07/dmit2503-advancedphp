@@ -23,9 +23,9 @@
 
 	while ($row = mysqli_fetch_array($result)) {
 		/// This should out put artist names: On your own....create thumbnail views with images, album names, etc.
-		$artist = ($row['artist']);
-		$title = ($row['title']);
-		$artwork = ($row['artwork']);
+		$artist = $row['artist'];
+		$title = $row['title'];
+		$artwork = $row['artwork'];
 		
 		echo "<div class=\"thisCD\">\n";
 

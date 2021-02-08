@@ -45,30 +45,30 @@
 
             //random images
 
-            $('#sideDisplay').load("display_rand_img.php");
+            //$('#sideDisplay').load("display_rand_img.php");
 
             
 
-            // $('#sideDisplay').click(function() {
-            //     $.ajax ({
-            //         type: "GET",
-            //         url: "display_rand_img.php",
-            //         data:{
-            //             displayby:$(this).attr(''),
-            //             displayvalue:$(this).attr('')
-            //         },
-            //         success: function(response) {
+            $('#sideDisplay').click(function() {
+                $.ajax ({
+                    type: "GET",
+                    url: "display_rand_img.php",
+                    data:{
+                        displayby:$(this).attr(''),
+                        displayvalue:$(this).attr('')
+                    },
+                    success: function(response) {
 
-            //             //var imgIndex = getRan
-            //             //$("#sideDisplay").changeImage();
-            //             //changeImage();
+                        //var imgIndex = getRan
+                        //$("#sideDisplay").changeImage();
+                        //changeImage();
 
-            //             $("#sideDisplay").hide();
-            //             $("#sideDisplay").html(response);
-            //             $("#sideDisplay").fadeIn();
-            //         }
-            //     });
-            // });
+                        $("#sideDisplay").hide();
+                        $("#sideDisplay").html(response);
+                        $("#sideDisplay").fadeIn();
+                    }
+                });
+            });
 
             // var timeMin = 5000; // 5seconds
             // var timeMax = 10000; // 10seconds

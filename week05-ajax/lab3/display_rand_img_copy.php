@@ -17,7 +17,7 @@
 		
 		// test with "display.php?displayby=genre&displayvalue=jazz" 
 
-		$result = mysqli_query($con,"SELECT * FROM cd_catalog_class WHERE $displayby LIKE '$displayvalue' ORDER BY RAND() LIMIT 3") or die (mysqli_error($con));
+		$result = mysqli_query($con,"SELECT * FROM cd_catalog_class ORDER BY RAND() LIMIT 1") or die (mysqli_error($con));
 
 	}
 

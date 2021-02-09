@@ -13,99 +13,47 @@
             //==================================================//
             //==================================================//
             //================== SIDEBAR AREA ==================//
-            // $('a.ajax-link').click(function() {
-            //     //console.log("clicked");
 
-            //     // we'll use these HTML data-attributes. Ignored by HTML, but can be used to move data to JS
-            //     // data-x="genre" data-y="rock"
 
-            //     //console.log($(this).attr('data-x') + ";" + $(this).attr('data-y'));
+            //random images
 
-            //     $.ajax({
+            function getRand() {
+                $.ajax ({
+                    type: "GET",
+                    url: "display_rand_img_copy.php",
+                    success: function(response) {
+                        $("#sideDisplay").html(response).fadeIn("slow");
+                    }
+                });
+            };
+            //setInterval("getRand()", 10000);
+            setInterval(function () {
+                $("sideDisplay").load("display_rand_img_copy.php").fadeIn("slow");
+            }, 1500);
 
-            //         type:"POST",
-            //         url: "display.php",
-                    // data:{
-                    //     displayby:$(this).attr('data-x'),
-                    //     displayvalue:$(this).attr('data-y')
-                    // },
-            //         //using Chrome Inspector >> Networ >> display.php >> see the query in action!!
+
+
+            // $('#sideDisplay').click(function() {
+            //     $.ajax ({
+            //         type: "GET",
+            //         url: "display_rand_img.php",
+            //         data:{
+            //             displayby:$(this).attr(''),
+            //             displayvalue:$(this).attr('')
+            //         },
             //         success: function(response) {
+
+            //             //var imgIndex = getRan
+            //             //$("#sideDisplay").changeImage();
+            //             //changeImage();
 
             //             $("#sideDisplay").hide();
             //             $("#sideDisplay").html(response);
             //             $("#sideDisplay").fadeIn();
-
-            //             // if that works, on your own ... finish all the links
             //         }
             //     });
-            //     //ENDOF $.ajax
-            //     return false;
-            // }); 
+            // });
 
-            //random images
-
-            //$('#sideDisplay').load("display_rand_img.php");
-
-            
-
-            $('#sideDisplay').click(function() {
-                $.ajax ({
-                    type: "GET",
-                    url: "display_rand_img.php",
-                    data:{
-                        displayby:$(this).attr(''),
-                        displayvalue:$(this).attr('')
-                    },
-                    success: function(response) {
-
-                        //var imgIndex = getRan
-                        //$("#sideDisplay").changeImage();
-                        //changeImage();
-
-                        $("#sideDisplay").hide();
-                        $("#sideDisplay").html(response);
-                        $("#sideDisplay").fadeIn();
-                    }
-                });
-            });
-
-            // var timeMin = 5000; // 5seconds
-            // var timeMax = 10000; // 10seconds
-            // function changeImage() {
-            //     var imgIndex = getRandom(0, images.length-1);
-            //     var time = getRandom(timeMin, timeMax);
-            //     //$('#sideDisplay').append
-            //     setTimeout(changeImage, time);
-            // }
-
-            // function getRandom(min, max) {
-            //     var r = Math.floor((Math.random()*(max-min))+min);
-            //     return r;
-            // }
-
-            
-
-            // function bannerGen() {
-            //     function randomPicture() {
-            //         var min = 101;
-            //         var max = 120;
-            //         var picture = Math.floor(Math.random() * (max-min+1)) + min;
-            //         return picture;
-            //     }
-
-            //     function bannerDisplay() {
-            //         $('#sideDisplay').fadeOut('400',function(){
-            //             var img = new Image()
-            //             var imageSrc = "display_rand_img.php"
-            //             $(img).load(function(){
-            //                 $("#sideDisplay").html.append($(this)).fadeIn('600');
-            //             }).attr('src', imageSrc);
-            //         })
-            //     }
-            // }
-            // bannerGen();
-            
 
             //================== END OF SIDEBAR AREA ==================//
             //=========================================================//

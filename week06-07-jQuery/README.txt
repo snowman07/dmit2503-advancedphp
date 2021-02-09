@@ -1,0 +1,1 @@
+All of these will be completed in class.

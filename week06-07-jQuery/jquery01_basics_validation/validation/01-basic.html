@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--   -->
+    
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="validate.js" type="text/javascript"></script></script>
+  
+ <script>
+  $(document).ready(function(){
+    $("#commentForm").validate();
+
+  });
+  
+  </script>
+<style type="text/css">
+
+</style>
+
+  
+</head>
+<body>
+  
+
+ <form  id="commentForm" method="get" action="success.html">
+ <fieldset>
+   <legend>A simple comment form with submit validation and default messages</legend>
+   <p>
+     <label for="cname">Name</label>
+     <em>*</em><input id="cname" name="name" size="25" class="required" minlength="2" />
+   </p>
+  
+   
+   
+   <p>
+     <input class="submit" type="submit" value="Submit"/>
+   </p>
+ </fieldset>
+ </form>
+</body>
+</html>

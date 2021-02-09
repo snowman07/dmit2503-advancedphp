@@ -1,0 +1,13 @@
+To go through this lesson, you may do either of the following:
+
+ - Use your own build of Multi-User Blog (MUB)
+ - Or, use this build.
+
+To use this build, please setup as follows:
+ - Enter your MySQL creds in both "includes/mysql_connect.php" AND "login/mysqli_connect.php".
+ - Change the base_url in "login/includes/config.inc.php" to be http://sweb1.dmit.nait.ca/~username/your-project-path/login/
+	-Remember to end path with both "login" and trailing slash.
+ - Install both MySQL tables.
+ - You can use the same "users" table you still have installed.
+
+

@@ -1,0 +1,2 @@
+THis will be an In CLASS exercise in utilizing FLOT charts with dynamic (PHP/MySQL) data.
+We will utilize the "jquery_populations.sql" data to create the JSON format data that will used by the FLOT chart.

@@ -19,15 +19,63 @@
 		-->
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<!-- ENDOF jQuery ANIMATION -->
 
 		<script type="text/javascript">
 			$(document).ready(function() {
 
-				console.log("ready to go...");
-			
-			
+				//console.log("ready to go...");
+				
+				$("p").click(function(e){
+					//console.log("paragraph clicked");
+					$(this).hide();
+
+					e.preventDefault();
+				});
+
+				$("#link1").click(function(e){
+					//console.log("clicked link1");
+
+					$("img").hide();
+					e.preventDefault();
+				});
+
+				$("#link2").click(function(e){
+
+					$("#rightcontent").animate({width:"20%", opacity:0.4});
+
+					e.preventDefault();
+				});
+
+				$("#link3").click(function(e){
+
+					$("img").hide(4000, function(){ //example of jQuery "callback"
+						//console.log("callback");
+
+						$("#textbanner").fadeOut(function(){
+							$("#rightcontent").css("background-color","red");
+						});
+					});
+					e.preventDefault();
+				});
+
+				$("#link4").click(function(e){
+					$("#logo").animate({
+						opacity: 0.25,
+						left: "+=500" //to move an element (left, top), the element must first be positioned either relative or absolute
+					},2000);
+					e.preventDefault();
+				});
+
+
+				$("#link5").click(function(e){
+
+					$("#logo").effect("bounce", {times:3}, 1000); // this requires jQuery UI to be loaded!!
+
+					e.preventDefault();
+				});
+
 			});
-		
 		</script>
 
 	</head>
@@ -39,11 +87,11 @@
 				</div>
 				<div id="rightnav">
 					<ul>
-						<li><a href="#">Home</a></li> 
-						<li><a href="#">About Us</a></li> 
-						<li><a href="#">Products</a></li> 
-						<li><a href="#">Services</a></li> 
-						<li><a href="#">Contact Us</a></li> 					
+						<li><a href="#" id="link1">Home</a></li> 
+						<li><a href="#" id="link2">Animate</a></li> 
+						<li><a href="#" id="link3">Fade/CSS</a></li> 
+						<li><a href="#" id="link4">Logo Animate</a></li> 
+						<li><a href="#" id="link5">Bounce</a></li> 					
 					</ul>
 				</div>
 				<br style="clear:both;">

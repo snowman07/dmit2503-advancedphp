@@ -1,41 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-<!--   -->
-    
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
-<script src="validate.js" type="text/javascript"></script></script>
-  
- <script>
-  $(document).ready(function(){
-    $("#commentForm").validate();
+  <head>
+    <!--   -->
+        
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <script src="validate.js" type="text/javascript"></script></script>
+      
+    <script>
+      $(document).ready(function(){
+        $("#commentForm").validate();
 
-  });
-  
-  </script>
-<style type="text/css">
+      });
+      
+    </script>
 
-</style>
+    <style type="text/css">
 
-  
-</head>
-<body>
-  
+      body {
+        font-family: verdana;
+      }
+      label {
+        width:120px;
+        float:left;
+        text-align:left;
+        margin-right:8px;
+      }
+      /* this is a built-in error styling */
+      label.error {
+        float:none;
+        color: red;
+        padding-left: 5px;
+      }
+      em {
+        font-weight: bold;
+        color: red;
+        padding: 2px;
+      }
 
- <form  id="commentForm" method="get" action="success.html">
- <fieldset>
-   <legend>A simple comment form with submit validation and default messages</legend>
-   <p>
-     <label for="cname">Name</label>
-     <em>*</em><input id="cname" name="name" size="25" class="required" minlength="2" />
-   </p>
-  
-   
-   
-   <p>
-     <input class="submit" type="submit" value="Submit"/>
-   </p>
- </fieldset>
- </form>
-</body>
+    </style> 
+
+  </head>
+  <body>
+    <form  id="commentForm" method="get" action="success.html">
+      <fieldset>
+        <legend>A simple comment form with submit validation and default messages</legend>
+        <p>
+          <label for="cname">Name</label>
+          <em>*</em><input id="cname" name="name" size="25" class="required" minlength="2" />
+        </p>
+
+        <p>
+          <label for="email">Email</label>
+          <em>*</em><input id="email" name="email" size="25" class="required email"/>
+        </p>
+
+        <p>
+          <!-- remember: to be valid, URL MUST begin with "http://" or "https://" -->
+          <label for="url">URL</label>
+          <em>&nbsp;</em><input id="url" name="url" size="25" class="url"/>
+        </p>
+
+        <p>
+          <label for="cc">Credit Card</label>
+          <em>&nbsp;</em><input id="cc" name="cc" size="25" class="creditcard"/>
+        </p>
+
+        <p>
+          <label for="pw">Password</label>
+          </em>*</em><input type="password" id="pw" name="pw" size="25" class="" minlength="6" maxlength="16"/>
+        </p>
+
+        <p>
+          <label for="pw_confirm">Password Confirm</label>
+          </em>*</em><input type="password" id="pw_confirm" name="pw_confirm" size="25" class="" equalTo="#pw"/>
+        </p>
+
+
+
+
+
+        <p>
+          <input class="submit" type="submit" value="Submit"/>
+        </p>
+      </fieldset>
+    </form>
+  </body>
 </html>

@@ -56,8 +56,23 @@
 				});
 
 
+				// $( "#dialog" ).dialog({
+				//  	autoOpen: false,
+				// 	show: {
+				// 		effect: "blind",
+				// 		duration: 1000
+				// 	},
+				// 	hide: {
+				// 		effect: "explode",
+				// 		duration: 1000
+				// 	}
+				//  });
+				// $( "#opener" ).on( "click", function() {
+				// 	$( "#dialog" ).dialog( "open" );
+				// });
 				$( "#dialog" ).dialog({
 					autoOpen: false,
+					width: 400,
 					show: {
 						effect: "blind",
 						duration: 1000
@@ -65,10 +80,28 @@
 					hide: {
 						effect: "explode",
 						duration: 1000
-					}
+					},
+					button: 
+					[
+						{
+							text: "OK",
+							click: function() {
+								$(this).dialog("close");
+							}
+						},
+						{
+							text: "Cancel",
+							click: function() {
+								$(this).dialog("close");
+							}
+						}
+					]
+						
 				});
-				$( "#opener" ).on( "click", function() {
+				// Link to open the dialog
+				$( "#opener" ).click(function( event ) {
 					$( "#dialog" ).dialog( "open" );
+					event.preventDefault();
 				});
 
 			});

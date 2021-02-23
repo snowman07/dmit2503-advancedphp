@@ -13,9 +13,9 @@
  */
 
 define("DB_HOST", "localhost");
-define("DB_NAME", "");
-define("DB_USER", "");
-define("DB_PASS", "");
+define("DB_NAME", "adomingo4_dmit2503");
+define("DB_USER", "adomingo4");
+define("DB_PASS", "PDsbNesMr3sSS79");
 
 
 

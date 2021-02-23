@@ -7,17 +7,24 @@ include("mysql_connect.php");
 
 <html>
 <head>
-<title>Blog</title>
+	<title>Blog</title>
 
-<link rel="stylesheet" type="text/css" href="includes/style.css">
-<!--  jQuery goes here -->
+	<link rel="stylesheet" type="text/css" href="includes/style.css">
+	<!--  jQuery goes here -->
+
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+
+
  
 </head>
 <body>
-<div id="container">
-<div id="banner"> 
- Blog
-</div>
+	<div id="container">
+	<div id="banner"> 
+	Blog
+	</div>
 
-<div id="content">
-<a href="index.php">All Posts</a>
+	<div id="content">
+	<a href="index.php">All Posts</a>

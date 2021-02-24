@@ -35,7 +35,9 @@
 		<div class="author">by <?php echo $row['user_name']  ?></div>
 
 		<?php 
+
 			$thisId = $row['blog_id'];// we'll set this for later use !
+
 			// NESTED QUERY FOR COMMENTS
 			$result2 = mysqli_query($con, "SELECT * FROM mubcomments JOIN users ON mubcomments.commentor_id = users.user_id  WHERE post_id = '$thisId' ORDER BY mubcomments.cid") or die(mysqli_error($con));
 		?>
@@ -49,11 +51,17 @@
 		<?php endwhile; ?>
 
 		<!--  If logged in, then user can add a comment. -->
+		<?php if ($login->isUserLoggedIn() == true): ?>
+			
+			<!-- logged in -->
+			<a href="" class="commentlink" data-x="commenttext<?php echo $thisId; ?>">Add Comment</a><br>
+			<form class="commentform" data-x="<?php echo $thisId; ?>">
+				<input type="text" class="commenttext" id="commenttext<?php echo $thisId; ?>">
+				<input type="submit" style="display:none">
+			</form>
 
-		<?php
-		
-		
-		?>
+
+		<?php endif; ?>
 
 	</div>
 	<!-- ENDOF blogentry -->

@@ -1,0 +1,257 @@
+<!-- THIS CODE IS SIMILAR TO >>week06-07 >>jquery02_flot_ui >>jquery-ui	>>booking_form_activity.html	 -->
+
+<!doctype html>
+<html lang="us">
+	<head>
+		<meta charset="utf-8">
+		<title>Vacation Booking Page</title>
+
+		<!-- Best way of trying themes is to check out the Google hosted files
+		Preview at : http://the-xavi.com/articles/jquery-ui-css-themes-hosted-on-cdn
+		If you find one you like, go to "Source", then copy/paste the URL into the "href" below
+		-->
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/redmond/jquery-ui.css" rel="stylesheet">
+		
+		<script src="js/jquery-1.9.0.js"></script>
+		<script src="js/jquery-ui-1.10.0.custom.js"></script>
+
+		<!-- --------------------------- -->
+		<!-- Script of ALL the jQuery UI -->
+		<!-- ref: https://jqueryui.com/ -->
+		<script>
+			$(document).ready(function(){
+				
+				$("#accordion").accordion();
+				
+				$("#tabs").tabs();
+
+				$("#tooltip").tooltip();
+
+				var canadianProvince = [
+					"Alberta",
+					"British Columbia",
+					"Manitoba",
+					"New Brunswick",
+					"Newfoundland",
+					"Nova Scotia",
+					"Northwest Territories",
+					"Nunavut",
+					"Ontario",
+					"Prince Edward Island",
+					"Quebec",
+					"Saskatchewan",
+					"Yukon"
+				];
+				$("#autocomplete").autocomplete({
+					source: canadianProvince
+				});	
+
+				$("#radioset").buttonset();
+
+				$("#datepicker").datepicker({
+					inline: true
+				});
+
+				$(function(){
+					$("#sortable").sortable();
+					$("#sortable").disableSelection();
+				});
+
+
+
+				$( "#slider-range" ).slider({
+					range: true,
+					min: 500,
+					max: 5000,
+					values: [ 1000, 3000 ],
+					step: 100,
+					slide: function( event, ui ) {
+						$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+					}
+				});
+				$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+				" - $" + $( "#slider-range" ).slider( "values", 1 ) );
+
+				
+
+				// $( "#dialog" ).dialog({
+				//  	autoOpen: false,
+				// 	show: {
+				// 		effect: "blind",
+				// 		duration: 1000
+				// 	},
+				// 	hide: {
+				// 		effect: "explode",
+				// 		duration: 1000
+				// 	}
+				//  });
+				// $( "#opener" ).on( "click", function() {
+				// 	$( "#dialog" ).dialog( "open" );
+				// });
+				$( "#dialog" ).dialog({
+					autoOpen: false,
+					width: 800,
+					show: {
+						effect: "blind",
+						duration: 1000
+					},
+					hide: {
+						effect: "explode",
+						duration: 1000
+					},
+					buttons: 
+					[
+						{
+							text: "Agree",
+							click: function() {
+								$(this).dialog("close");
+							}
+						},
+						{
+							text: "Cancel",
+							click: function() {
+								$(this).dialog("close");
+							}
+						}
+					]
+						
+				});
+				// Link to open the dialog
+				$( "#opener" ).click(function( event ) {
+					$( "#dialog" ).dialog( "open" );
+					event.preventDefault();
+				});
+
+			});
+		</script>
+		<!-- ENDOF ALL the jQuery UI -->
+		<!-- ----------------------- -->
+
+		<style>
+			#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+			#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+			#sortable li span { position: absolute; margin-left: -1.3em; }
+		</style>
+
+	</head>
+	<body>
+		<h1>jQuery UI Activity</h1>
+		<br />
+		<!-- ------------------ -->
+		<!-- Start of Accordion -->
+		<h2 class="demoHeaders">ACCORDION</h2>
+		<div id="accordion">
+			<h3>Caribbean</h3>
+			<div>
+				A lot of us are happily trading the Great White North for the great white sand of places like Varadero, Punta Cana, Mexico.s Mayan Riviera, Hawaii and Florida. Some of us are taking off to cruise the Caribbean and visit ports of call in sunny places like the Cayman Islands, Jamaica and Barbados.
+				Others are tasting the Latin flavours of destinations like Costa Rica, Honduras and Margarita Island, Venezuela, or the history of Cartagena, the fortress town that once guarded treasure-laden Spanish galleons against the likes of Sir Francis Drake and Henry Morgan. Mind you, modern-day treasure hunters are more likely heading for the bright lights and sensational entertainment of Las Vegas and its casinos.
+			</div>
+			<h3>Mexico</h3>
+			<div>
+				A mix of the modern and traditional, with a landscape that is just as varied; Mexico is truly a traveller's paradise.
+				Whether it's the pristine beaches of the Riviera Maya that you're looking for, the unique, desert-like appearance of Los Cabos, Puerto Vallarta's colonial charm, or Cancun's vibrant nightlife; each part of Mexico offers something a little different and something perfect for you.
+			</div>
+
+			<h3>Las Vegas</h3>
+			<div>
+				We want to help you find the perfect Las Vegas vacation packages, by bringing you great vacation deals, a huge selection of cheap vacations at popular destinations and outstanding customer service when booking your holiday.
+			</div>
+
+			<h3>Winnipeg</h3>
+			<div>
+				Why the freak would anyone want to go to Winnipeg? Why the heck not...that's what we say. Great deals to be had as no one in their right mind would even thing of such a thing, so hotels will give great deals to anyone stupid enough to do it. All you have to do is decide on the right season for your trip: Winterpeg season, mosquito season, or flood season. Whatever the time, if you're crazy enough to do it, they'll sure as heck take your money.
+			</div>
+		</div> <br /><br />
+		<!-- ENDOF Accordion -->
+		<!-- --------------- -->
+
+		<!-- ------------ -->
+		<!-- Start of TAB -->
+		<h2 class="demoHeaders">TABS</h2>
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Couples</a></li>
+				<li><a href="#tabs-2">Family</a></li>
+				<li><a href="#tabs-3">Singles</a></li>
+			</ul>
+			<div id="tabs-1">
+				Our resort caters to couples and single looking to get away from it all. Minimum age requirements vary by resort, but, in general, 18 is the standard. You'll find adults only hotels that offer a totally serene environment designed to pamper body, soul and spirit in luxurious surroundings with impeccable service and those that offer a fun-loving, socially interactive escape with activity and fun on tap throughout the day and long into the night, catering to a free-spirited crowd with racy games and contests. 
+			</div>
+			<div id="tabs-2">
+				Planning a family vacation can be tricky business. Finding the right resort that will make both the kids and adults happy isn't an easy task to accomplish. Well, at least until now it wasn't. With Escapes, we've picked out the top kids friendly resorts to help make your family vacation choice a little easier.
+			</div>
+			<div id="tabs-3">
+				Finding good Singles Resorts & Vacations can be a bit tricky, especially when you don't know much about the destination and the many resorts available. If you are looking for good resorts for singles, then you have come to the right place. Our list of single adults only resorts above can help you narrow down to which resort may work well for you
+			</div>
+		</div><br /><br />
+		<!-- ENDOF TAB -->
+		<!-- --------- -->
+
+		<!-- ------------- -->
+		<!-- Start of FORM -->
+		<h1>Please fill out this form to book your holiday package</h1>
+		<form>
+			<p>
+				<!-- TOOLTIP: "Please enter your full name as it is spelled on your credit card" -->
+				Your name:
+				<input id="tooltip" type="text" name="name" 
+						title="Please enter your full name as it is spelled on your credit card."/>	
+			</p>
+			<p>
+				<!-- AUTOCOMPLETE; populate with several Canadian cities -->
+				Your province:
+				<input id="autocomplete" type="text" name="province"/>
+			</p>
+			<p>
+				<!-- RADIOSET -->
+				Your destination:
+				<div id="radioset">
+					<label for="radio1">Caribbean</label>	<input id="radio1" type="radio" name="destination" value="caribbean" checked/>
+					<label for="radio2">Mexico</label>		<input id="radio2" type="radio" name="destination" value="mexico"/>
+					<label for="radio3">Las Vegas</label>	<input id="radio3" type="radio" name="destination" value="lasvegas" />
+					<label for="radio4">Winnipeg</label>	<input id="radio4" type="radio" name="destination" value="winnipeg" />
+				</div>
+			</p>
+			<p>
+				<!-- DATEPICKER -->
+				Date of departure:
+				<input id="datepicker" type="text" name="datedeparture" />
+			</p>
+			<p>
+				<!-- SORTABLE -->
+				Please place the following priorities in order of importance
+				<ul id="sortable">
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Price</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Activities</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Family-Friendly</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Strip Bars</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Minimal Drug-Lord beheadings</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>A Velociraptor-free holiday</li>
+				</ul>
+			</p>
+			<p>
+				<!-- Range Slider -->
+				<label for="amount">Price range:</label>
+				<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+				
+				<div id="slider-range"></div>
+			</p>
+			<p>
+				<button id="opener" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>Terms of Use</button><!-- DIALOG - Open Terms : Add Open Icon to Button  -->
+				<div id="dialog" title="Terms of Use"><!-- DIALOG Show 2 buttons: Agree/Cancel -->
+					<p>IT IS IMPORTANT THAT YOU READ ALL THE TERMS AND CONDITIONS CAREFULLY. The Phil Redmond College of Rock and Roll Knowledge owns and operates this Web, located at http://whatever.com (the Web site). This Terms of Use Agreement (this Agreement) states the terms and conditions under which you may access and use the Web site. By accessing and using the Web site you are indicating your acceptance to be bound by the terms and conditions of this Agreement. If you do not accept these terms and conditions, you must not access or use the Web site. IF YOU ARE DISSATISFIED WITH THE TERMS, CONDITIONS, RULES, POLICIES, GUIDELINES OR PRACTICES OF THE Phil Redmond College of Rock and Roll Knowledge OPERATING WEB SITE, YOUR SOLE AND EXCLUSIVE REMEDY IS TO DISCONTINUE USING IT. Phil Redmond College of Rock and Roll Knowledge may revise this Agreement at any time by updating this posting. Use of the Web site after such changes are posted will signify your agreement to these revised terms. You should visit this page periodically to review this Agreement.</p> 
+				</div>
+				<!-- CHALLENGE: If use selects to Cancel Terms, show an error bar telling them they must accept. -->
+				<div class="ui-widget">
+					<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+						<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+						<strong>Alert:</strong> You must accept</p>
+					</div>
+				</div>
+			</p>
+			<br /><br />
+		</form>
+		<!-- ENDOF FORM -->
+		<!-- ---------- -->
+	</body>
+</html>

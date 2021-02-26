@@ -30,7 +30,6 @@
 				// accordion and tab
 
 
-
 				$( "#dialog" ).dialog({
 					autoOpen: false,
 					width: 800,
@@ -42,21 +41,21 @@
 						effect: "explode",
 						duration: 1000
 					},
-					buttons: 
-					[
-						{
-							text: "Agree",
-							click: function() {
-								$(this).dialog("close");
-							}
-						},
-						{
-							text: "Cancel",
-							click: function() {
-								$(this).dialog("close");
-							}
-						}
-					]
+					// buttons: 
+					// [
+					// 	{
+					// 		text: "Agree",
+					// 		click: function() {
+					// 			$(this).dialog("close");
+					// 		}
+					// 	},
+					// 	{
+					// 		text: "Cancel",
+					// 		click: function() {
+					// 			$(this).dialog("close");
+					// 		}
+					// 	}
+					// ]
 						
 				});
 				// Link to open the dialog
@@ -71,6 +70,31 @@
 		</script>
 		<!-- ENDOF ALL the jQuery UI -->
 		<!-- ----------------------- -->
+
+		<style type="text/css">
+
+			body {
+			  font-family: verdana;
+			}
+			label {
+			  width:120px;
+			  float:left;
+			  text-align:left;
+			  margin-right:8px;
+			}
+			/* this is a built-in error styling */
+			label.error {
+			  float:none;
+			  color: red;
+			  padding-left: 5px;
+			}
+			em {
+			  font-weight: bold;
+			  color: red;
+			  padding: 2px;
+			}
+	  
+		  </style> 
 
 	</head>
 	<body>
@@ -163,14 +187,14 @@
 		  
 				  <p>
 					<label for="pw">Password</label>
-					</em>*</em><input type="password" id="pw" name="pw" size="25" class="" minlength="6" maxlength="16"/>
+					<em>*</em><input type="password" id="pw" name="pw" size="25" class="required" minlength="6" maxlength="16"/>
 				  </p>
 		  
 				  <p>
 					<label for="pw_confirm">Password Confirm</label>
-					</em>*</em><input type="password" id="pw_confirm" name="pw_confirm" size="25" class="" equalTo="#pw"/>
+					<em>*</em><input type="password" id="pw_confirm" name="pw_confirm" size="25" class="required" equalTo="#pw"/>
 				  </p>
-		  
+				  <br />
 
 				  <p>
 					<input class="submit" type="submit" value="Submit"/>
@@ -180,7 +204,7 @@
 
 
 		</div>
-		<br /><br />
+		<br /><br /><br /><br />
 		<!-- ENDOF Registration Form -->
 		<!-- ----------------------- -->
 

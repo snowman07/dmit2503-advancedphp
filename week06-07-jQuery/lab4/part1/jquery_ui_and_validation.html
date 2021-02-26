@@ -41,21 +41,6 @@
 						effect: "explode",
 						duration: 1000
 					},
-					// buttons: 
-					// [
-					// 	{
-					// 		text: "Agree",
-					// 		click: function() {
-					// 			$(this).dialog("close");
-					// 		}
-					// 	},
-					// 	{
-					// 		text: "Cancel",
-					// 		click: function() {
-					// 			$(this).dialog("close");
-					// 		}
-					// 	}
-					// ]
 						
 				});
 				// Link to open the dialog
@@ -63,6 +48,7 @@
 					$( "#dialog" ).dialog( "open" );
 					event.preventDefault();
 				});
+
 
 				$("#commentForm").validate();
 
@@ -183,6 +169,16 @@
 				  <p>
 					<label for="cc">Credit Card</label>
 					<em>&nbsp;</em><input id="cc" name="cc" size="25" class="creditcard"/>
+				  </p>
+
+				  <p>
+					<label for="age">Age</label>
+					<em>&nbsp;</em><input type="" name="age" id="age" size="" class="number"/>
+				  </p>
+
+				  <p>
+					  <label for="comment">Comment</label>
+					  <em>*</em><textarea name="comment" id="comment" rows="2" class="required"></textarea>
 				  </p>
 		  
 				  <p>

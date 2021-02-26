@@ -4,7 +4,7 @@
 <html lang="us">
 	<head>
 		<meta charset="utf-8">
-		<title>Vacation Booking Page</title>
+		<title>Lab4 JQuery UI</title>
 
 		<!-- Best way of trying themes is to check out the Google hosted files
 		Preview at : http://the-xavi.com/articles/jquery-ui-css-themes-hosted-on-cdn
@@ -48,9 +48,6 @@
 
 				$("#radioset").buttonset();
 
-				$("#datepicker").datepicker({
-					inline: true
-				});
 
 				$(function(){
 					$("#sortable").sortable();
@@ -58,21 +55,6 @@
 				});
 
 
-
-				$( "#slider-range" ).slider({
-					range: true,
-					min: 500,
-					max: 5000,
-					values: [ 1000, 3000 ],
-					step: 100,
-					slide: function( event, ui ) {
-						$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-					}
-				});
-				$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-				" - $" + $( "#slider-range" ).slider( "values", 1 ) );
-
-				
 
 				// $( "#dialog" ).dialog({
 				//  	autoOpen: false,
@@ -135,7 +117,7 @@
 
 	</head>
 	<body>
-		<h1>jQuery UI Activity</h1>
+		<h1>Lab4 Part1 JQuery UI and Validation [4 marks] => base from jQuery UI Activity</h1>
 		<br />
 		<!-- ------------------ -->
 		<!-- Start of Accordion -->
@@ -212,11 +194,8 @@
 					<label for="radio4">Winnipeg</label>	<input id="radio4" type="radio" name="destination" value="winnipeg" />
 				</div>
 			</p>
-			<p>
-				<!-- DATEPICKER -->
-				Date of departure:
-				<input id="datepicker" type="text" name="datedeparture" />
-			</p>
+			
+
 			<p>
 				<!-- SORTABLE -->
 				Please place the following priorities in order of importance
@@ -229,15 +208,9 @@
 					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>A Velociraptor-free holiday</li>
 				</ul>
 			</p>
+			
 			<p>
-				<!-- Range Slider -->
-				<label for="amount">Price range:</label>
-				<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-				
-				<div id="slider-range"></div>
-			</p>
-			<p>
-				<button id="opener" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>Terms of Use</button><!-- DIALOG - Open Terms : Add Open Icon to Button  -->
+				<button id="opener" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>Open Dialog</button><!-- DIALOG - Open Terms : Add Open Icon to Button  -->
 				<div id="dialog" title="Terms of Use"><!-- DIALOG Show 2 buttons: Agree/Cancel -->
 					<p>IT IS IMPORTANT THAT YOU READ ALL THE TERMS AND CONDITIONS CAREFULLY. The Phil Redmond College of Rock and Roll Knowledge owns and operates this Web, located at http://whatever.com (the Web site). This Terms of Use Agreement (this Agreement) states the terms and conditions under which you may access and use the Web site. By accessing and using the Web site you are indicating your acceptance to be bound by the terms and conditions of this Agreement. If you do not accept these terms and conditions, you must not access or use the Web site. IF YOU ARE DISSATISFIED WITH THE TERMS, CONDITIONS, RULES, POLICIES, GUIDELINES OR PRACTICES OF THE Phil Redmond College of Rock and Roll Knowledge OPERATING WEB SITE, YOUR SOLE AND EXCLUSIVE REMEDY IS TO DISCONTINUE USING IT. Phil Redmond College of Rock and Roll Knowledge may revise this Agreement at any time by updating this posting. Use of the Web site after such changes are posted will signify your agreement to these revised terms. You should visit this page periodically to review this Agreement.</p> 
 				</div>

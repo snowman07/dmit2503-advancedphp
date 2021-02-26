@@ -1,4 +1,5 @@
-<!-- THIS CODE IS SIMILAR TO >>week06-07 >>jquery02_flot_ui >>jquery-ui	>>booking_form_activity.html	 -->
+<!-- THIS CODE IS SIMILAR TO >>week06-07 >>jquery02_flot_ui >>jquery-ui	>>booking_form_activity.html &&&  basic validation -->
+<!-- Check PDF for the requirements -->
 
 <!doctype html>
 <html lang="us">
@@ -14,6 +15,7 @@
 		
 		<script src="js/jquery-1.9.0.js"></script>
 		<script src="js/jquery-ui-1.10.0.custom.js"></script>
+		<script src="js/validate.js"></script>
 
 		<!-- --------------------------- -->
 		<!-- Script of ALL the jQuery UI -->
@@ -21,55 +23,14 @@
 		<script>
 			$(document).ready(function(){
 				
+				// accordion and tab
 				$("#accordion").accordion();
 				
 				$("#tabs").tabs();
-
-				$("#tooltip").tooltip();
-
-				var canadianProvince = [
-					"Alberta",
-					"British Columbia",
-					"Manitoba",
-					"New Brunswick",
-					"Newfoundland",
-					"Nova Scotia",
-					"Northwest Territories",
-					"Nunavut",
-					"Ontario",
-					"Prince Edward Island",
-					"Quebec",
-					"Saskatchewan",
-					"Yukon"
-				];
-				$("#autocomplete").autocomplete({
-					source: canadianProvince
-				});	
-
-				$("#radioset").buttonset();
-
-
-				$(function(){
-					$("#sortable").sortable();
-					$("#sortable").disableSelection();
-				});
+				// accordion and tab
 
 
 
-				// $( "#dialog" ).dialog({
-				//  	autoOpen: false,
-				// 	show: {
-				// 		effect: "blind",
-				// 		duration: 1000
-				// 	},
-				// 	hide: {
-				// 		effect: "explode",
-				// 		duration: 1000
-				// 	}
-				//  });
-				// $( "#opener" ).on( "click", function() {
-				// 	$( "#dialog" ).dialog( "open" );
-				// });
 				$( "#dialog" ).dialog({
 					autoOpen: false,
 					width: 800,
@@ -104,20 +65,17 @@
 					event.preventDefault();
 				});
 
+				$("#commentForm").validate();
+
 			});
 		</script>
 		<!-- ENDOF ALL the jQuery UI -->
 		<!-- ----------------------- -->
 
-		<style>
-			#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-			#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
-			#sortable li span { position: absolute; margin-left: -1.3em; }
-		</style>
-
 	</head>
 	<body>
-		<h1>Lab4 Part1 JQuery UI and Validation [4 marks] => base from jQuery UI Activity</h1>
+
+		<h1>Lab4 Part1 JQuery UI and Validation [4 marks] => <i> base from jQuery UI Activity</i></h1>
 		<br />
 		<!-- ------------------ -->
 		<!-- Start of Accordion -->
@@ -169,62 +127,62 @@
 		<!-- ENDOF TAB -->
 		<!-- --------- -->
 
-		<!-- ------------- -->
-		<!-- Start of FORM -->
-		<h1>Please fill out this form to book your holiday package</h1>
-		<form>
-			<p>
-				<!-- TOOLTIP: "Please enter your full name as it is spelled on your credit card" -->
-				Your name:
-				<input id="tooltip" type="text" name="name" 
-						title="Please enter your full name as it is spelled on your credit card."/>	
-			</p>
-			<p>
-				<!-- AUTOCOMPLETE; populate with several Canadian cities -->
-				Your province:
-				<input id="autocomplete" type="text" name="province"/>
-			</p>
-			<p>
-				<!-- RADIOSET -->
-				Your destination:
-				<div id="radioset">
-					<label for="radio1">Caribbean</label>	<input id="radio1" type="radio" name="destination" value="caribbean" checked/>
-					<label for="radio2">Mexico</label>		<input id="radio2" type="radio" name="destination" value="mexico"/>
-					<label for="radio3">Las Vegas</label>	<input id="radio3" type="radio" name="destination" value="lasvegas" />
-					<label for="radio4">Winnipeg</label>	<input id="radio4" type="radio" name="destination" value="winnipeg" />
-				</div>
-			</p>
-			
+		<!-- -------------------------- -->
+		<!-- Start of Registration Form -->
+		<h2 class="demoHeaders">REGISTRATION FORM</h2>
+		
+		<button id="opener" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>
+			Open Dialog
+		</button><!-- DIALOG - Open Terms : Add Open Icon to Button  -->
+		
+		<div id="dialog" title="New Contact"><!-- DIALOG Show 2 buttons: Agree/Cancel -->
 
-			<p>
-				<!-- SORTABLE -->
-				Please place the following priorities in order of importance
-				<ul id="sortable">
-					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Price</li>
-					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Activities</li>
-					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Family-Friendly</li>
-					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Strip Bars</li>
-					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Minimal Drug-Lord beheadings</li>
-					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>A Velociraptor-free holiday</li>
-				</ul>
-			</p>
-			
-			<p>
-				<button id="opener" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>Open Dialog</button><!-- DIALOG - Open Terms : Add Open Icon to Button  -->
-				<div id="dialog" title="Terms of Use"><!-- DIALOG Show 2 buttons: Agree/Cancel -->
-					<p>IT IS IMPORTANT THAT YOU READ ALL THE TERMS AND CONDITIONS CAREFULLY. The Phil Redmond College of Rock and Roll Knowledge owns and operates this Web, located at http://whatever.com (the Web site). This Terms of Use Agreement (this Agreement) states the terms and conditions under which you may access and use the Web site. By accessing and using the Web site you are indicating your acceptance to be bound by the terms and conditions of this Agreement. If you do not accept these terms and conditions, you must not access or use the Web site. IF YOU ARE DISSATISFIED WITH THE TERMS, CONDITIONS, RULES, POLICIES, GUIDELINES OR PRACTICES OF THE Phil Redmond College of Rock and Roll Knowledge OPERATING WEB SITE, YOUR SOLE AND EXCLUSIVE REMEDY IS TO DISCONTINUE USING IT. Phil Redmond College of Rock and Roll Knowledge may revise this Agreement at any time by updating this posting. Use of the Web site after such changes are posted will signify your agreement to these revised terms. You should visit this page periodically to review this Agreement.</p> 
-				</div>
-				<!-- CHALLENGE: If use selects to Cancel Terms, show an error bar telling them they must accept. -->
-				<div class="ui-widget">
-					<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
-						<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
-						<strong>Alert:</strong> You must accept</p>
-					</div>
-				</div>
-			</p>
-			<br /><br />
-		</form>
-		<!-- ENDOF FORM -->
-		<!-- ---------- -->
+			<form  id="commentForm" method="get" action="success.html">
+				<fieldset>
+				  <legend>A simple comment form with submit validation and default messages</legend>
+				  <p>
+					<label for="cname">Name</label>
+					<em>*</em><input id="cname" name="name" size="25" class="required" minlength="2" />
+				  </p>
+		  
+				  <p>
+					<label for="email">Email</label>
+					<em>*</em><input id="email" name="email" size="25" class="required email"/>
+				  </p>
+		  
+				  <p>
+					<!-- remember: to be valid, URL MUST begin with "http://" or "https://" -->
+					<label for="url">URL</label>
+					<em>&nbsp;</em><input id="url" name="url" size="25" class="url"/>
+				  </p>
+		  
+				  <p>
+					<label for="cc">Credit Card</label>
+					<em>&nbsp;</em><input id="cc" name="cc" size="25" class="creditcard"/>
+				  </p>
+		  
+				  <p>
+					<label for="pw">Password</label>
+					</em>*</em><input type="password" id="pw" name="pw" size="25" class="" minlength="6" maxlength="16"/>
+				  </p>
+		  
+				  <p>
+					<label for="pw_confirm">Password Confirm</label>
+					</em>*</em><input type="password" id="pw_confirm" name="pw_confirm" size="25" class="" equalTo="#pw"/>
+				  </p>
+		  
+
+				  <p>
+					<input class="submit" type="submit" value="Submit"/>
+				  </p>
+				</fieldset>
+			</form>
+
+
+		</div>
+		<br /><br />
+		<!-- ENDOF Registration Form -->
+		<!-- ----------------------- -->
+
 	</body>
 </html>

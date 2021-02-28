@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Three: FLOT Chart</title>
+    <title>COVID-19 vaccination in Canada</title>
     <link href="style.css" rel="stylesheet" type="text/css">
 
     <script language="javascript" type="text/javascript" src="jquery.js"></script>
@@ -70,7 +70,7 @@
 <body>
 
     <div id="header">
-        <h2>Three: FLOT Chart</h2>
+        <h2>COVID-19 vaccination in Canada</h2>
     </div>
 
     <div id="content">
@@ -80,7 +80,10 @@
             <p id="choices" style="float:right; width:135px;"></p>
         </div>
 
-        <p>My demo shows how some of the major smartphone manufacturers have increased (in some cases decreased) the price of their flagship smartphones in two years increments.</p>
+        <p>
+            Figure shows the cumulative number of COVID-19 vaccine doses administered in Canada by jurisdiction.
+            Reference: <a href="https://health-infobase.canada.ca/covid-19/vaccine-administration/" target="_blank">Click Here</a>
+        </p>
     </div>
 
     <div id="footer">

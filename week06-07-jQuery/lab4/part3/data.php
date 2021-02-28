@@ -15,33 +15,33 @@ foreach ($_GET as $key => $value) {
     $_GET[$key] = mysqli_real_escape_string($con, $value);
 }
 
-$result = mysqli_query($con, "SELECT * from flot_smartphones");
+$result = mysqli_query($con, "SELECT * from lab4_covid_vaccine");
 
 while ($row = mysqli_fetch_array($result)) {
-    $manufacturer = $row['manufacturer'];
-    $m2007 = $row['2007'];
-    $m2009 = $row['2009'];
-    $m2011 = $row['2011'];
-    $m2013 = $row['2013'];
-    $m2015 = $row['2015'];
-    $m2017 = $row['2017'];
-    $m2019 = $row['2019'];
-    $m2021 = $row['2021'];
+    $province = $row['province'];
+    $feb17_2021 = $row['feb17_2021'];
+    $feb18_2021 = $row['feb18_2021'];
+    $feb19_2021 = $row['feb19_2021'];
+    $feb22_2021 = $row['feb22_2021'];
+    $feb23_2021 = $row['feb23_2021'];
+    $feb24_2021 = $row['feb24_2021'];
+    $feb25_2021 = $row['feb25_2021'];
+    $feb26_2021 = $row['feb26_2021'];
 
-    $thisManufacturerData = "\n\"$manufacturer\": {";
-    $thisManufacturerData .= "\nlabel: \"$manufacturer\",";
-    $thisManufacturerData .= "\ndata: [";
-    $thisManufacturerData .= "[2007, $m2007],";
-    $thisManufacturerData .= "[2009, $m2009],";
-    $thisManufacturerData .= "[2011, $m2011],";
-    $thisManufacturerData .= "[2013, $m2013],";
-    $thisManufacturerData .= "[2015, $m2015],";
-    $thisManufacturerData .= "[2017, $m2017],";
-    $thisManufacturerData .= "[2019, $m2019],";
-    $thisManufacturerData .= "[2021, $m2021]";
-    $thisManufacturerData .= "] \n},";
+    $thisprovince = "\n\"$province\": {";
+    $thisprovince .= "\nlabel: \"$province\",";
+    $thisprovince .= "\ndata: [";
+    $thisprovince .= "[feb17_2021, $feb17_2021],";
+    $thisprovince .= "[feb18_2021, $feb18_2021],";
+    $thisprovince .= "[feb19_2021, $feb19_2021],";
+    $thisprovince .= "[feb22_2021, $feb22_2021],";
+    $thisprovince .= "[feb23_2021, $feb23_2021],";
+    $thisprovince .= "[feb24_2021, $feb24_2021],";
+    $thisprovince .= "[feb25_2021, $feb25_2021],";
+    $thisprovince .= "[feb26_2021, $feb26_2021]";
+    $thisprovince .= "] \n},";
 
-    $allManufacturersData .= $thisManufacturerData;
+    $allprovince .= $thisprovince;
 }
 
-echo substr($allManufacturersData, 0, -1);
+echo substr($allprovince, 0, -1);

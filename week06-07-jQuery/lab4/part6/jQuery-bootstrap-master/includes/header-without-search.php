@@ -45,16 +45,6 @@ include("mysql_connect.php");// here we include the connection script; since thi
     <!------- END OF SCRIPT FOR EDIT -------->
     <!--------------------------------------->
 
-
-    <!------------------------------------------------------------------->
-    <!----------  SCRIPT FOR jQuery Bootstrap News Box Plugin ----------->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="scripts/jquery.bootstrap.newsbox.js?v3" type="text/javascript"></script>
-    
-    <!----------  END OF SCRIPT FOR jQuery Bootstrap News Box Plugin ----------->
-    <!-------------------------------------------------------------------------->
-
   </head>
 
   <body>
@@ -78,15 +68,7 @@ include("mysql_connect.php");// here we include the connection script; since thi
               <!-- <a class="dropdown-item" href="<?php echo BASE_URL ?>#">Link</a> -->
             </div>
           </li>
-        </ul>
-        
-        <!---------------------------------------------->
-        <!---------------    Search Bar:  -------------->
-        <!---------------------------------------------->
-        <form class="form-inline mt-2 mt-md-0" method="post" action="search.php">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search plant name here" aria-label="Search" name="searchtext">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searchsubmit">Search</button>
-        </form>      
+        </ul>    
       </div>  
     </nav>
 

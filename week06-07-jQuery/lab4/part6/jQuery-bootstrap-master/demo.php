@@ -1,3 +1,10 @@
+<!-- REFERENCE FOR jQuery Bootstrap Plugin on the Sidebar -->
+<!-- https://www.jqueryscript.net/slider/Responsive-jQuery-News-Ticker-Plugin-with-Bootstrap-3-Bootstrap-News-Box.html -->
+
+<?php
+  include ("includes/header.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,12 +32,12 @@
   <div class="jquery-script-clear"></div>
   </div>
   </div>
-  <h1 style="margin-top:150px" align="center">jQuery Bootstrap News Box Plugin Demos</h1>
+  <h1 style="margin-top:150px" align="center">jQuery Bootstrap Plugin on the Sidebar</h1>
   <div class="container">
     <div class="row">
       <div class="col-md-3">
         <div class="card panel-default">
-          <div class="card-header"> <span class="glyphicon glyphicon-list-alt"></span><b>News</b></div>
+          <div class="card-header"> <span class="glyphicon glyphicon-list-alt"></span><b>Scrolling Plants</b></div>
           <div class="card-body">
             <div class="row">
               <div class="col-xs-12">
@@ -38,7 +45,7 @@
                   <li class="news-item">
                     <table cellpadding="4">
                       <tr>
-                      <td><img src="images/1.png" width="60" class="img-circle" /></td>
+                      <td><img src="images/p1.jpg" width="60" class="img-circle" /></td>
                       <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
                       </tr>
                     </table>
@@ -46,7 +53,7 @@
                   <li class="news-item">
                     <table cellpadding="4">
                       <tr>
-                        <td><img src="images/2.png" width="60" class="img-circle" /></td>
+                        <td><img src="images/p2.jpg" width="60" class="img-circle" /></td>
                         <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
                       </tr>
                     </table>
@@ -54,7 +61,7 @@
                   <li class="news-item">
                     <table cellpadding="4">
                       <tr>
-                        <td><img src="images/3.png" width="60" class="img-circle" /></td>
+                        <td><img src="images/p3.jpg" width="60" class="img-circle" /></td>
                         <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
                       </tr>
                     </table>
@@ -62,7 +69,7 @@
                   <li class="news-item">
                     <table cellpadding="4">
                       <tr>
-                        <td><img src="images/4.png" width="60" class="img-circle" /></td>
+                        <td><img src="images/p4.jpg" width="60" class="img-circle" /></td>
                         <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
                       </tr>
                     </table>
@@ -70,7 +77,7 @@
                   <li class="news-item">
                     <table cellpadding="4">
                       <tr>
-                        <td><img src="images/5.png" width="60" class="img-circle" /></td>
+                        <td><img src="images/p5.jpg" width="60" class="img-circle" /></td>
                         <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
                       </tr>
                     </table>
@@ -78,7 +85,7 @@
                   <li class="news-item">
                     <table cellpadding="4">
                       <tr>
-                        <td><img src="images/6.png" width="60" class="img-circle" /></td>
+                        <td><img src="images/p6.jpg" width="60" class="img-circle" /></td>
                         <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
                       </tr>
                     </table>
@@ -86,7 +93,7 @@
                   <li class="news-item">
                     <table cellpadding="4">
                       <tr>
-                        <td><img src="images/7.png" width="60" class="img-circle" /></td>
+                        <td><img src="images/p7.jpg" width="60" class="img-circle" /></td>
                         <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
                       </tr>
                     </table>

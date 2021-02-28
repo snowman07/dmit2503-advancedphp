@@ -32,12 +32,13 @@
   <div class="jquery-script-clear"></div>
   </div>
   </div>
-  <h1 style="margin-top:150px" align="center">jQuery Bootstrap Plugin on the Sidebar</h1>
+  <h1 style="margin-top:100px" align="center">jQuery Bootstrap Plugin on the Sidebar</h1>
+  <p ><center>Sidebar will scroll automatically. User can choose to click arrow up or down</center></p>
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="card panel-default">
-          <div class="card-header"> <span class="glyphicon glyphicon-list-alt"></span><b>Scrolling Plants</b></div>
+          <div class="card-header"> <span class="glyphicon glyphicon-list-alt"></span><b>Best Seller Plants</b></div>
           <div class="card-body">
             <div class="row">
               <div class="col-xs-12">
@@ -45,8 +46,10 @@
                   <li class="news-item">
                     <table cellpadding="4">
                       <tr>
-                      <td><img src="images/p1.jpg" width="60" class="img-circle" /></td>
-                      <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
+                        <td><img src="images/p1.jpg" width="60" class="img-circle" /></td>
+                        <td>Aloe vera is a succulent plant species of the genus Aloe...
+                          <a href="https://en.wikipedia.org/wiki/Aloe_vera" target="_blank">Read more...</a>
+                        </td>
                       </tr>
                     </table>
                   </li>
@@ -54,7 +57,7 @@
                     <table cellpadding="4">
                       <tr>
                         <td><img src="images/p2.jpg" width="60" class="img-circle" /></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
+                        <td>Chlorophytum comosum, often called spider plant but also known as airplane plant... <a href="https://en.wikipedia.org/wiki/Chlorophytum_comosum" target="_blank">Read more...</a></td>
                       </tr>
                     </table>
                   </li>
@@ -62,7 +65,7 @@
                     <table cellpadding="4">
                       <tr>
                         <td><img src="images/p3.jpg" width="60" class="img-circle" /></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
+                        <td>The African violet is one of the most popular flowering house plants from the saintpaulia genus... <a href="https://www.houseplantsexpert.com/african-violet-care-information.html" target="_blank">Read more...</a></td>
                       </tr>
                     </table>
                   </li>
@@ -70,7 +73,7 @@
                     <table cellpadding="4">
                       <tr>
                         <td><img src="images/p4.jpg" width="60" class="img-circle" /></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
+                        <td>Sedum rubrotinctum, commonly known as jelly-beans or pork and beans. It is a species of Sedum from the plant family Crassulaceae.<a href="https://en.wikipedia.org/wiki/Sedum_rubrotinctum" target="_blank">Read more...</a></td>
                       </tr>
                     </table>
                   </li>
@@ -78,7 +81,7 @@
                     <table cellpadding="4">
                       <tr>
                         <td><img src="images/p5.jpg" width="60" class="img-circle" /></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
+                        <td>Opuntia microdasys (angel's-wings, bunny ears cactus, bunny cactus or polka-dot cactus) is a species of flowering plant...<a href="https://en.wikipedia.org/wiki/Opuntia_microdasys" target="_blank">Read more...</a></td>
                       </tr>
                     </table>
                   </li>
@@ -86,7 +89,7 @@
                     <table cellpadding="4">
                       <tr>
                         <td><img src="images/p6.jpg" width="60" class="img-circle" /></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
+                        <td>Echinocactus grusonii, popularly known as the golden barrel cactus, golden ball or mother-in-law's cushion... <a href="https://en.wikipedia.org/wiki/Echinocactus_grusonii" target="_blank">Read more...</a></td>
                       </tr>
                     </table>
                   </li>
@@ -94,7 +97,7 @@
                     <table cellpadding="4">
                       <tr>
                         <td><img src="images/p7.jpg" width="60" class="img-circle" /></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim... <a href="#">Read more...</a></td>
+                        <td>Calathea crocata, commonly called Eternal Flame Plant belongs in the Marantaceae family... <a href="https://smartgardenguide.com/calathea-crocata-care/" target="_blank">Read more...</a></td>
                       </tr>
                     </table>
                   </li>
@@ -107,7 +110,7 @@
       </div>
       <!-- ENDOF col-md-3 -->
 
-      <div class="col-md-9" style="display: flex; flex-wrap: wrap; justify-content: space-evenly;"> 
+      <div class="col-md-8" style="display: flex; flex-wrap: wrap; justify-content: space-evenly;"> 
     
         <?php
           ///////////// DEFAULT QUERY: RETRIEVE EVERYTHING

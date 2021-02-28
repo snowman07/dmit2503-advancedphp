@@ -32,7 +32,7 @@
   <div class="jquery-script-clear"></div>
   </div>
   </div>
-  <h1 style="margin-top:100px" align="center">jQuery Bootstrap Plugin on the Sidebar</h1>
+  <h1 style="margin-top:150px" align="center">jQuery Bootstrap Plugin on the Sidebar</h1>
   <p ><center>Sidebar will scroll automatically. User can choose to click arrow up or down</center></p>
   <div class="container">
     <div class="row">

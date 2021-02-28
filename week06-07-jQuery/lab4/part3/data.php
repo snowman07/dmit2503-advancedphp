@@ -1,4 +1,5 @@
 <?php
+
 $con = mysqli_connect("localhost", "adomingo4","PDsbNesMr3sSS79","adomingo4_dmit2503");
 // Check connection
 if (mysqli_connect_errno()) {
@@ -15,33 +16,37 @@ foreach ($_GET as $key => $value) {
     $_GET[$key] = mysqli_real_escape_string($con, $value);
 }
 
-$result = mysqli_query($con, "SELECT * from lab4_covid_vaccine");
+$result = mysqli_query($con, "SELECT * from lab4_flot_chart");
 
 while ($row = mysqli_fetch_array($result)) {
-    $province = $row['province'];
-    $feb17_2021 = $row['feb17_2021'];
-    $feb18_2021 = $row['feb18_2021'];
-    $feb19_2021 = $row['feb19_2021'];
-    $feb22_2021 = $row['feb22_2021'];
-    $feb23_2021 = $row['feb23_2021'];
-    $feb24_2021 = $row['feb24_2021'];
-    $feb25_2021 = $row['feb25_2021'];
-    $feb26_2021 = $row['feb26_2021'];
+    $continent = $row['continent'];
+    //echo $continent;
+    $c1980 = $row['1980'];
+    $c1985 = $row['1985'];
+    $c1990 = $row['1990'];
+    $c1995 = $row['1995'];
+    $c2000 = $row['2000'];
+    $c2005 = $row['2005'];
+    $c2010 = $row['2010'];
+    $c2015 = $row['2015'];
 
-    $thisprovince = "\n\"$province\": {";
-    $thisprovince .= "\nlabel: \"$province\",";
-    $thisprovince .= "\ndata: [";
-    $thisprovince .= "[feb17_2021, $feb17_2021],";
-    $thisprovince .= "[feb18_2021, $feb18_2021],";
-    $thisprovince .= "[feb19_2021, $feb19_2021],";
-    $thisprovince .= "[feb22_2021, $feb22_2021],";
-    $thisprovince .= "[feb23_2021, $feb23_2021],";
-    $thisprovince .= "[feb24_2021, $feb24_2021],";
-    $thisprovince .= "[feb25_2021, $feb25_2021],";
-    $thisprovince .= "[feb26_2021, $feb26_2021]";
-    $thisprovince .= "] \n},";
+    $thisContinent = "\n\"$continent\": {";
+    $thisContinent .= "\nlabel: \"$continent\",";
+    $thisContinent .= "\ndata: [";
+    $thisContinent .= "[1980, $c1980],";
+    $thisContinent .= "[1985, $c1985],";
+    $thisContinent .= "[1990, $c1990],";
+    $thisContinent .= "[1995, $c1995],";
+    $thisContinent .= "[2000, $c2000],";
+    $thisContinent .= "[2005, $c2005],";
+    $thisContinent .= "[2010, $c2010],";
+    $thisContinent .= "[2015, $c2015]";
+    $thisContinent .= "] \n},";
 
-    $allprovince .= $thisprovince;
+    //echo $thisprovince;
+    $allContinents .= $thisContinent;
 }
 
-echo substr($allprovince, 0, -1);
+echo substr($allContinents, 0, -1);
+
+?>

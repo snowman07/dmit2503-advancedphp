@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>COVID-19 vaccination in Canada</title>
+    <title>Meat production from 1980-2015</title>
     <link href="style.css" rel="stylesheet" type="text/css">
 
     <script language="javascript" type="text/javascript" src="jquery.js"></script>
@@ -70,7 +70,7 @@
 <body>
 
     <div id="header">
-        <h2>COVID-19 vaccination in Canada</h2>
+        <h2>Meat production from 1980-2015</h2>
     </div>
 
     <div id="content">
@@ -81,8 +81,11 @@
         </div>
 
         <p>
-            Figure shows the cumulative number of COVID-19 vaccine doses administered in Canada by jurisdiction.
-            Reference: <a href="https://health-infobase.canada.ca/covid-19/vaccine-administration/" target="_blank">Click Here</a>
+            Figure shows the meat production from 1980-2015 by continent.
+            
+        </p>
+        <p>
+            Reference: <a href="https://ourworldindata.org/meat-production" target="_blank">Click Here</a>
         </p>
     </div>
 

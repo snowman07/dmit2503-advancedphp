@@ -40,7 +40,7 @@
     if (isset($_POST['submit'])) {
         if (!empty($_POST['skills'])) {
             foreach ($_POST['skills'] as $selected) {
-                echo '  ' . $selected . " / ";
+                echo $selected . "<br/>";
             }
         } else {
             echo 'Please select the value.';

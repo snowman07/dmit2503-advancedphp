@@ -6,15 +6,34 @@
     <meta charset="utf-8">
     <style>
     /* Going for more of a desktop layout here just for lessons. Google's own docs use more of a mobile layout. */
-      html, body {
+      /* html, body {
 
-      }
+      } */
       #map {
         width:800px;
         height: 600px;
         margin:auto;
       }
     </style>
+
+    <script>
+        function initMap() {
+            //THIS IS FROM: https://developers.google.com/maps/documentation/javascript/overview#all
+            // map = new google.maps.Map(document.getElementById("map"), {
+            // center: { lat: -34.397, lng: 150.644 },
+            // zoom: 8,
+            // });
+            var mapOptions = {
+                center: new google.maps.LatLng(49.30076, -123.148597),
+                zoom: 15,
+                mapTypeId: google.maps.mapTypeId.HYBRID
+            }  
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);    
+        };
+
+
+    </script>
+
   </head>
   <body>
     <div id="map"></div>

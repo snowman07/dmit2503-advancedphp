@@ -26,7 +26,14 @@
             var mapOptions = {
                 center: new google.maps.LatLng(53.56886924082652, -113.50295881697457),
                 zoom: 15,
-                mapTypeId: google.maps.MapTypeId.ROADMAP //types of map: HYBRID, ROADMAP, SATELLITE, TERRAIN
+                mapTypeId: google.maps.MapTypeId.ROADMAP, //types of map: HYBRID, ROADMAP, SATELLITE, TERRAIN
+
+                //---------------- google this for controls: google map api controls
+                streetViewControl: true,   //doesn't work bec there's no API
+                mapTypeControl: false,      //doesn't work bec there's no API
+                zoomControl: false,
+                fullscreenControl: false
+
             }  
             var map = new google.maps.Map(document.getElementById("map"), mapOptions);    
         };
@@ -42,10 +49,12 @@
     </script>
 
     <!-- THIS IS IF YOU HAVE AN API KEY -->
-    <!-- https://developers.google.com/maps/documentation/javascript/get-api-key -->
+    <!-- reference: https://developers.google.com/maps/documentation/javascript/get-api-key -->
+
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
     type="text/javascript"></script> -->
 
+    <!-- WITHOUT AN API KEY -->
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
   </body>
 </html>

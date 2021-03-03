@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+    /* Going for more of a desktop layout here just for lessons. Google's own docs use more of a mobile layout. */
+      /* html, body {
+
+      } */
+      #map {
+        width:800px;
+        height: 600px;
+        margin:auto;
+      }
+    </style>
+
+    <script type="text/javascript">
+        function initMap() {
+            //THIS IS FROM: https://developers.google.com/maps/documentation/javascript/overview#all
+            // map = new google.maps.Map(document.getElementById("map"), {
+            // center: { lat: -34.397, lng: 150.644 },
+            // zoom: 8,
+            // });
+            var mapOptions = {
+                center: new google.maps.LatLng(53.56886924082652, -113.50295881697457),
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP //types of map: HYBRID, ROADMAP, SATELLITE, TERRAIN
+            }  
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);    
+        };
+
+
+    </script>
+
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+     
+    </script>
+
+    <!-- THIS IS IF YOU HAVE AN API KEY -->
+    <!-- reference: https://developers.google.com/maps/documentation/javascript/get-api-key -->
+
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+    type="text/javascript"></script> -->
+
+    <!-- WITHOUT AN API KEY -->
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
+  </body>
+</html>

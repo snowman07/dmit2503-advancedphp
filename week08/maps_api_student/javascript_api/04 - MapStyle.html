@@ -32,8 +32,10 @@
             
 
             //---------------------------//
-            //------- MAP STYLING -------//
-            // https://mapstyle.withgoogle.com/
+            //------- MAP STYLING (type of map should be ROADMAP)-------//
+            // NOTE: this will not work without API KEY
+            // reference: https://mapstyle.withgoogle.com/
+            // another map styling: https://snazzymaps.com/
             var mapStyle = [
             {
                 "featureType": "landscape",
@@ -56,6 +58,9 @@
             ];
 
             map.setOptions({styles:mapStyle });
+
+            //---------- END OF MAP STYLING -----------//
+            //-----------------------------------------//
         };
     </script>
 

@@ -30,8 +30,26 @@
             }  
             var map = new google.maps.Map(document.getElementById("map"), mapOptions);    
 
+            var duckMarker = new google.maps.Marker({
+                position: new google.maps.LatLng(53.57048945728041, -113.50012859099311),
+                map: map,
+                title: "The Duck - Taphouse and Grill",
+                icon: "icons/beergarden.png",
+                animation: google.maps.Animation.BOUNCE // .DROP
 
-            
+            });
+
+            // on your own... create a marker for the Boston Pizza at Kingsway Mall
+
+            var bpMarker = new google.maps.Marker({
+                position: new google.maps.LatLng(53.564465314255884, -113.50456740819624),
+                map: map,
+                title: "Boston Pizza",
+                icon: "icons/muffin_bagle.png",
+                animation: google.maps.Animation.BOUNCE // .DROP
+
+            });
+
         };
 
 

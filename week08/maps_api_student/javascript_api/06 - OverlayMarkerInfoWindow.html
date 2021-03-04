@@ -39,15 +39,21 @@
 
             });
 
-            // on your own... create a marker for the Boston Pizza at Kingsway Mall
+           
+            // Info WIndow
+            // Step 1: Define the window
+            var myDuckWindow = new google.maps.InfoWindow({
+                content: "<div style=\"width: 400px; height: 140px; padding: 20px; background-color:#aeeaea\"><h4>The Duck - Taphouse and Grill</h4><p><img src=\"icons/duck.jpg\"/>Order food delivery and take out online from The Duck Taphouse and Grill</p></div>"
 
-            var bpMarker = new google.maps.Marker({
-                position: new google.maps.LatLng(53.564465314255884, -113.50456740819624),
-                map: map,
-                title: "Boston Pizza",
-                icon: "icons/muffin_bagle.png",
-                animation: google.maps.Animation.BOUNCE // .DROP
+                // using an <img>, please incorporate an image into your window.
 
+
+            });
+
+            //Step2: Add an event listener to grab a user event and open the window
+
+            google.maps.event.addListener(duckMarker, "click", function(){
+                myDuckWindow.open(map, duckMarker);
             });
 
         };

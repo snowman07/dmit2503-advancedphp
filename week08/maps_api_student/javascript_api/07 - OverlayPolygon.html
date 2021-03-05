@@ -24,11 +24,32 @@
             // zoom: 8,
             // });
             var mapOptions = {
-                center: new google.maps.LatLng(53.56886924082652, -113.50295881697457),
-                zoom: 15,
+                center: new google.maps.LatLng(53.544026962583196, -113.49228692401215),
+                zoom: 14,
                 mapTypeId: google.maps.MapTypeId.ROADMAP //types of map: HYBRID, ROADMAP, SATELLITE, TERRAIN
             }  
-            var map = new google.maps.Map(document.getElementById("map"), mapOptions);    
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);   
+            
+            // define a polygon
+            var edmDowntownCoords = [
+                new google.maps.LatLng(53.539211, -113.486495), //SE
+                new google.maps.LatLng(53.531057, -113.496276), //S
+                new google.maps.LatLng(53.535946, -113.509197), //SW
+                new google.maps.LatLng(53.54732, -113.508425), //NW
+                new google.maps.LatLng(53.547091, -113.483148) //NE
+            ];
+
+            edmDownTown = new google.maps.Polygon({
+                paths: edmDowntownCoords,
+                strokeColor: "#ff0000",
+                strokeOpacity: 0.5,
+                strokeWeight: 3,
+                fillColor: "ff0000",
+                fillOpacity: 0.35
+            });
+
+            edmDownTown.setMap(map);
+
         };
 
 

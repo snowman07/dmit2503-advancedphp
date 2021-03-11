@@ -16,52 +16,113 @@
 
         
         <div data-role="header">
-            <h1>Web Design</h1> 
+            <h1>Pant Business</h1> 
         </div>
 
-        <div data-role="collapsible">
-            <h1>Web Design</h1> 
+        <div data-role="collapsible" data-collapsed-icon="home">
+            <h2>Home</h2> 
             <p>
                 Web design is a broad term covering many different skills and disciplines that are used in the production and maintenance of web pages. The different areas of web design include; web graphic design, interface design, authoring; including standardised code and proprietary software, user experience design and search engine optimisation.
             </p>
-            <p>
-                Often web designers will work in teams covering different aspects of the design process, although some designers will cover them all. The term web design is normally used to describe the design process relating to the front-end (client side) design of a website including writing mark up, but this is a grey area as this is also covered by web development.  
-            </p>
         </div>
 
-        <div data-role="collapsible">
-            <h1>HTML5</h1> 
-            <p>
-                HTML5 is a markup language for structuring and presenting content for the World Wide Web and a core technology of the Internet. It is the fifth revision of the HTML standard (created in 1990 and standardized as HTML 4 as of 1997) and, as of December 2012, is a W3C Candidate Recommendation.
-            </p>
-            <p>
-                Its core aims have been to improve the language with support for the latest multimedia while keeping it easily readable by humans and consistently understood by computers and devices (web browsers, parsers, etc.). HTML5 is intended to subsume not only HTML 4, but XHTML 1 and DOM Level 2 HTML as well.  
-            </p>
+        <div data-role="collapsible" data-collapsed-icon="search" data-collapsed="false">
+            <h2>Look for Plants</h2> 
+            <!-- <ul data-role="listview" data-inset="true" data-divider-theme="a">
+                <li data-role="list-divider">Cactus</li>
+                <li>
+                    <a href="#">
+                        <img src="http://unsplash.it/200?image=43" alt="">
+                        <h3>Disocactus</h3>
+                        <p>This is a cactus baby!</p>
+                    </a>
+                </li>
+                <li>2
+
+                </li>
+                <li data-role="list-divider">Fern</li>
+                <li>1</li>
+                <li>2</li>
+                <li data-role="list-divider">Succu</li>
+                <li>1</li>
+                <li>2</li>
+            </ul> -->
+            <div data-role="collapsible" data-collapsed="false"> 
+                <h3>Cactus</h3>
+                <ul data-role="listview" data-split-icon="shop" data-inset="true">
+                    <li>
+                        <a href="#">
+                            <img src="http://unsplash.it/200?image=43" alt="">
+                            <h3>Disocactus</h3>
+                        </a>
+                        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase Plant</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://unsplash.it/200?image=23" alt="">
+                            <h3>Disocactus</h3>
+                        </a>
+                        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase Plant</a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="collapsible" data-collapsed="false"> 
+                <h3>Succu</h3>
+                <ul data-role="listview" data-split-icon="shop" data-inset="true">
+                    <li>
+                        <a href="#">
+                            <img src="http://unsplash.it/200?image=93" alt="">
+                            <h3>Disocactus</h3>
+                            <p>This is a cactus baby!</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://unsplash.it/200?image=25" alt="">
+                            <h3>Disocactus</h3>
+                            <p>This is a cactus baby!</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="collapsible" data-collapsed="false"> 
+                <h3>Fern</h3>
+                <ul data-role="listview" data-split-icon="shop" data-inset="true">
+                    <li>
+                        <a href="#">
+                            <img src="http://unsplash.it/200?image=88" alt="">
+                            <h3>Disocactus</h3>
+                            <p>This is a cactus baby!</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://unsplash.it/200?image=55" alt="">
+                            <h3>Disocactus</h3>
+                            <p>This is a cactus baby!</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width: 340px; padding-bottom: 2em;">
+                <h4>Purchase Plant?</h4>
+                <p>This might be your greatest decision if you purchase this plant.</p><br/>
+                <button><a href="#" data-rel="back">Yes</a></button>
+                <button><a href="#" data-rel="back">Cancel</a></button>
+            </div>
+            
         </div>
 
-        <div data-role="collapsible">
-            <h1>Graphic Design</h1> 
+        <div data-role="collapsible" data-collapsed-icon="location">
+            <h2>Location</h2> 
             <p>
                 Graphic design is a creative process-most often involving a client and a designer and usually completed in conjunction with producers of form (i.e., printers, signmakers, etc.) undertaken in order to convey a specific message (or messages) to a targeted audience. 
             </p>
-            <p>
-                The term "graphic design" can also refer to a number of artistic and professional disciplines that focus on visual communication and presentation. The field as a whole is also often referred to as Visual Communication or Communication Design. Various methods are used to create and combine words, symbols, and images to create a visual representation of ideas and messages.  
-            </p>
-        </div>
-
-        <div data-role="collapsible">
-            <h1>Web Development</h1> 
-            <p>
-                Web development is a broad term for the work involved in developing a web site for the Internet (World Wide Web) or an intranet (a private network). This can include web design, web content development, client liaison, client-side/server-side scripting, web server and network security configuration, and e-commerce development.
-            </p>
-            <p>
-                However, among web professionals, "web development" usually refers to the main non-design aspects of building web sites: writing markup and coding. 
-            </p>
         </div>
 
 
-
-        <div data-role="footer">
+        <div data-role="footer" data-position="fixed">
             <h4>My Footer</h4>
         </div>
     </body>

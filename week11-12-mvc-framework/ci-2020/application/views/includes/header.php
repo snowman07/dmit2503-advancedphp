@@ -8,6 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <!-- link to CSS -->
+    <link href="<?php echo base_url(); ?>css/styles.css" rel="stylesheet">
+
     <title>Hello, world!</title>
   </head>
   <body>
@@ -35,9 +38,9 @@
                     Dropdown link
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="<?php echo base_url()?>birds">Birds Main</a> 
+                        <a class="dropdown-item" href="<?php echo base_url()?>birds/loon">Loon</a> 
+                        <a class="dropdown-item" href="<?php echo base_url()?>birds/sparrow">Sparrow</a>
                     </div>
                 </li>
             </ul>

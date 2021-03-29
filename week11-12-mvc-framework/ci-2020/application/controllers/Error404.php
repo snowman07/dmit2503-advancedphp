@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Birds extends CI_Controller {
+class Error404 extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -38,7 +38,8 @@ class Birds extends CI_Controller {
     { 
         $data['heading'] = "404 – Page Not Found."; 
         $data['picture'] = "owl.jpg"; 
-        $data['message'] = "<p>404 – Page Not Found.</p>; 
+        $data['message'] = "<p>Sorry. It appears the page you are looking for does not exist.</p>
+                            <p>The reason........</p>"; 
 
         // echo "<pre>"; 
         // print_r($data); 

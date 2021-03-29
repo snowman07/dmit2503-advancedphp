@@ -41,6 +41,7 @@
                         <a class="dropdown-item" href="<?php echo base_url()?>birds">Birds Main</a> 
                         <a class="dropdown-item" href="<?php echo base_url()?>birds/loon">Loon</a> 
                         <a class="dropdown-item" href="<?php echo base_url()?>birds/sparrow">Sparrow</a>
+                        <a class="dropdown-item" href="<?php echo base_url()?>birds/falcon">Falcon</a>
                     </div>
                 </li>
             </ul>

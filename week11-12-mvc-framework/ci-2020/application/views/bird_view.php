@@ -14,7 +14,7 @@
             echo $message; 
             // echo "<img src=\"\" alt=\"\">";
         ?>
-        <img src="<?php echo $picture; ?>" alt="">
+        <img src="<?php echo base_url('img/birds/$picture') ?>" alt="bird">
     </div>
 
 

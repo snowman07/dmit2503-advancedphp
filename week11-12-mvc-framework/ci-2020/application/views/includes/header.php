@@ -11,6 +11,22 @@
     <!-- link to CSS -->
     <link href="<?php echo base_url(); ?>css/styles.css" rel="stylesheet">
 
+    <!-- link to google icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <script type="text/javascript"> 
+        $(document).ready(function(){ 
+            //console.log('ready');
+
+            // fade #message if exists
+            if($('#message').length){ 
+                $( "#message" ).delay(3000).fadeOut({}, 3000); 
+            }
+        }); 
+    </script>
+
+
     <title>
         <?php
             if(APP_NAME){ 
@@ -36,7 +52,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
-                    <a class="navbar-brand" href="<?php echo base_url()?>">Home</a>
+                    <a class="navbar-brand" href="<?php echo base_url()?>"> <i class="material-icons">home</i></a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Features</a>
@@ -46,6 +62,15 @@
                 </li> -->
                 <li class="nav-item active">
                     <a class="navbar-brand" href="<?php echo base_url()?>crud">CRUD</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        CRUD
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="">Read</a> 
+                        <a class="dropdown-item" href="<?php echo base_url()?>crud/write">Write</a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -61,3 +86,10 @@
             </ul>
         </div>
     </nav>
+
+    <?php $message = $this->session->flashdata('message'); ?> 
+    <?php if ($message): ?> 
+        <h3 class="alert alert-primary" id="message"><i class="material-icons">thumb_up</i><?php echo $message ?></h3>
+        <?php echo $message ?></h3> 
+    <?php endif; ?> 
+    <!-- This ends the header include -->

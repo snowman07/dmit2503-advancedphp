@@ -25,4 +25,9 @@
             return FALSE; 
         } 
     }
+    
+    function insert_animal($data){ 
+        $this->db->insert('ci_animals', $data); 
+    }
+    
 }

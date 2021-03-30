@@ -45,7 +45,7 @@
                     <a class="nav-link" href="#">Pricing</a>
                 </li> -->
                 <li class="nav-item active">
-                    <a class="navbar-brand" href="<?php echo base_url()?>">CRUD</a>
+                    <a class="navbar-brand" href="<?php echo base_url()?>crud">CRUD</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

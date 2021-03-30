@@ -14,4 +14,15 @@
             return FALSE; 
         } 
     } 
+
+    function get_animal_detail($id){ 
+        $this->db->where('animal_id', $id); 
+        $query = $this->db->get('ci_animals'); 
+        
+        if ( $query->num_rows() > 0 ){ 
+            return $query->result(); 
+        }else{ 
+            return FALSE; 
+        } 
+    }
 }

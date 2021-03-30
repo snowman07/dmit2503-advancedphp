@@ -41,6 +41,7 @@
             $data['heading'] = "Reading from a DB"; 
             $this->load->model('crud_model'); 
             $data['results'] = $this->crud_model->get_animal_detail($id); 
+            
             $this->load->view('includes/header',$data); 
             $this->load->view('crud_detail_view',$data);
             $this->load->view('includes/footer'); 

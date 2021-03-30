@@ -8,6 +8,7 @@
 
         <div class="whatever"> 
             <h4><?php echo $row->animal_name ?></h4> 
+            <button> <a href="">Read more</a> </button>
         </div> 
 
     <?php endforeach;?> 

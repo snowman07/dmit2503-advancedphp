@@ -46,7 +46,7 @@ class Birds extends CI_Controller {
         // print_r($data); 
         // echo "</pre>";
 
-        $this->load->view('includes/header'); 
+        $this->load->view('includes/header',$data); // here we add the $data array so that the $heading is available to the header view
         $this->load->view('bird_view',$data); // we need to pass the array to the view 
         $this->load->view('includes/footer');
 
@@ -62,7 +62,7 @@ class Birds extends CI_Controller {
 
         <p> Flying loons resemble a plump goose with a seagull's wings, relatively small in proportion to the bulky body. The bird holds its head pointing slightly upwards during swimming, but less so than cormorants do. In flight the head droops more than in similar aquatic birds.</p>"; 
 
-        $this->load->view('includes/header'); 
+        $this->load->view('includes/header',$data); // here we add the $data array so that the $heading is available to the header view
         $this->load->view('bird_view',$data); 
         $this->load->view('includes/footer');
     } 
@@ -77,7 +77,7 @@ class Birds extends CI_Controller {
 
         <p>Larger, longer-tailed and usually more rusty than Savannah Sparrow. Found in a variety of scrubby habitats both near and far from human development, especially edges of fields, often near water. Listen for husky chimp calls and melodic song with chips and trills.</p>"; 
 
-        $this->load->view('includes/header'); 
+        $this->load->view('includes/header',$data); // here we add the $data array so that the $heading is available to the header view 
         $this->load->view('bird_view',$data); 
         $this->load->view('includes/footer');
     }
@@ -92,7 +92,7 @@ class Birds extends CI_Controller {
 
         <p>The falcons are the largest genus in the Falconinae subfamily of Falconidae, which itself also includes another subfamily comprising caracaras and a few other species. All these birds kill with their beaks, using a tooth on the side of their beaks—unlike the hawks, eagles, and other birds of prey in the Accipitridae, which use their feet.</p>"; 
 
-        $this->load->view('includes/header'); 
+        $this->load->view('includes/header',$data); // here we add the $data array so that the $heading is available to the header view  
         $this->load->view('bird_view',$data); 
         $this->load->view('includes/footer');
     }

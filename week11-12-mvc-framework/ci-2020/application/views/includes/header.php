@@ -85,6 +85,8 @@
                 </li>
             </ul>
         </div>
+
+        <a href="<?php echo base_url()?>auth/login" class="btn btn-primary">Login</a>
     </nav>
 
     <?php $message = $this->session->flashdata('message'); ?> 

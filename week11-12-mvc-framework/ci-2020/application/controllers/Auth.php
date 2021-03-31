@@ -109,8 +109,9 @@ class Auth extends CI_Controller
 				'id' => 'password',
 				'type' => 'password',
 			];
-
+			$this->load->view('includes/header');
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'login', $this->data);
+			$this->load->view('includes/footer');
 		}
 	}
 

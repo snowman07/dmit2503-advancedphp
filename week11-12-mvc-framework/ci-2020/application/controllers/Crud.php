@@ -50,6 +50,16 @@
 
         public function write() { 
             // Validation Library was loaded in the constructor. 
+
+            if (!$this->ion_auth->logged_in()) 
+            { 
+                redirect('/auth/login/'); 
+            }
+            else
+            { 
+                $data['author_id'] = $this->ion_auth->user()->row()->id; 
+            }
+            
             
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
             $this->form_validation->set_rules('animal_name', 'Animal Name', 'required|min_length[4]|max_length[40]'); $this->form_validation->set_rules('description', 'Description', 'required|min_length[20]|max_length[2000]');

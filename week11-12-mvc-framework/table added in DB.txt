@@ -1,0 +1,5 @@
+
+These are the tables added in DB
+
+DB: adomingo4_dmit2503
+Tables: ci_animals, groups, users, users_groups

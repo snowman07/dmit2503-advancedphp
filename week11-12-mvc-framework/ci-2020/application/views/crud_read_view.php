@@ -8,7 +8,7 @@
 
         <div class="whatever"> 
             <h4><?php echo $row->animal_name ?></h4> 
-            <button> <a href="<?php echo base_url() . 'crud/detail($id)' ?>" >Read more</a> </button>
+            <a href="<?php echo base_url() . "crud/detail/" .$row->animal_id; ?>" class="btn btn-primary btn-sm">Read more</a>
         </div> 
 
     <?php endforeach;?> 

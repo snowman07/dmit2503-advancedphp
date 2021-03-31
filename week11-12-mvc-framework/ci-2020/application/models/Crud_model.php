@@ -29,5 +29,10 @@
     function insert_animal($data){ 
         $this->db->insert('ci_animals', $data); 
     }
+
+    function edit_animal($data,$id){ 
+        $this->db->where('animal_id', $id); 
+        $this->db->update('ci_animals', $data); 
+    }
     
 }

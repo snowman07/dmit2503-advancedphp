@@ -62,7 +62,7 @@
             
             
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
-            $this->form_validation->set_rules('animal_name', 'Animal Name', 'required|min_length[4]|max_length[40]'); $this->form_validation->set_rules('description', 'Description', 'required|min_length[20]|max_length[2000]');
+            $this->form_validation->set_rules('animal_name', 'Animal Name', 'required|min_length[3]|max_length[40]'); $this->form_validation->set_rules('description', 'Description', 'required|min_length[20]|max_length[2000]');
 
             if ($this->form_validation->run() == FALSE) { 
                 $this->load->view('includes/header'); 

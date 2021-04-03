@@ -133,7 +133,7 @@
 
         public function delete() {
             $id=$this->input->get('animal_id');
-            $this->crud_model->delete_animal($data,$id);
+            $this->Crud_model->delete_animal($id);
             echo "Successfully deleted!";
         } 
 

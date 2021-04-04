@@ -87,6 +87,21 @@
         </div>
 
         <a href="<?php echo base_url()?>auth/login" class="btn btn-primary">Login</a>
+
+        
+        <?php if ($this->ion_auth->logged_in()) : ?> 
+        <?php 
+            $user_id = $this->ion_auth->user()->row()->id ; 
+            $username = $this->ion_auth->user()->row()->username ; 
+        ?> 
+        <!-- Here you do your links & Bootstrap for the Logged in part: Links to logout, change password, and create article would be nice. --> 
+        Logged in <?php echo $username; ?> 
+        
+        <?php else: ?> 
+        <a href="<?php echo base_url()?>auth/login">Login </a> 
+        <?php endif; ?>
+
+
     </nav>
 
  

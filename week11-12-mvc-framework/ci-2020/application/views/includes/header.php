@@ -89,9 +89,6 @@
         <a href="<?php echo base_url()?>auth/login" class="btn btn-primary">Login</a>
     </nav>
 
-    <?php $message = $this->session->flashdata('message'); ?> 
-    <?php if ($message): ?> 
-        <h3 class="alert alert-primary" id="message"><i class="material-icons">thumb_up</i><?php echo $message ?></h3>
-        <?php echo $message ?></h3> 
-    <?php endif; ?> 
+ 
+
     <!-- This ends the header include -->

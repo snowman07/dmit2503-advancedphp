@@ -3,7 +3,7 @@
 
 <div id="infoMessage"><?php echo $message;?></div>
 
-<form action="">
+
   <?php echo form_open("auth/login");?>
 
     <div class="form-group row">
@@ -29,7 +29,7 @@
     <p><?php echo form_submit('submit', lang('login_submit_btn'));?></p>
 
   <?php echo form_close();?>
-</form>
+
 
 <p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
 

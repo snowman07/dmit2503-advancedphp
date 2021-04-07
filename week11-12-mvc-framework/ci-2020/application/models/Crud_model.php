@@ -41,7 +41,9 @@
         //----- START OF DELETE FUNCTION -----//
 
         function delete_animal($id) {
-            $this->db->query('animal_id', $id);
+            $this->db->where('animal_id', $id);
+            $this->db->delete('ci_animals');
+            //return true;
         } 
         
         // reference: https://www.studentstutorial.com/codeigniter/delete-data-codeigniter

@@ -128,39 +128,39 @@
         //ENDOF edit
 
 
-        //------------------------------------//
-        //----- START OF DELETE FUNCTION -----//
-
-        public function delete() {
-            
-            $this->load->model('crud_model'); 
-            
-            $id=$this->input->get('animal_id');
-            $this->crud_model->delete_animal($id);
-            //echo "Successfully deleted!";
-            $this->session->set_flashdata('message', 'Successfully deleted!'); 
-            redirect('crud/');
-
-        } 
-
-        //------ END OF DELETE FUNCTION ------//
-        //------------------------------------//
-
-
         // //------------------------------------//
         // //----- START OF DELETE FUNCTION -----//
 
-        // public function delete($id) {
+        // public function delete() {
             
         //     $this->load->model('crud_model'); 
             
+        //     $id=$this->input->get('animal_id');
         //     $this->crud_model->delete_animal($id);
         //     //echo "Successfully deleted!";
-        //     //$this->session->set_flashdata('message', 'Successfully deleted!'); 
-        //     redirect('crud/', 'location');
+        //     $this->session->set_flashdata('message', 'Successfully deleted!'); 
+        //     redirect('crud/');
 
         // } 
 
         // //------ END OF DELETE FUNCTION ------//
+        // //------------------------------------//
+
+
+        //------------------------------------//
+        //----- START OF DELETE FUNCTION -----//
+
+        public function delete($id) {
+            
+            $this->load->model('crud_model'); 
+            
+            $this->crud_model->delete_animal($id);
+            //echo "Successfully deleted!";
+            $this->session->set_flashdata('message', 'Successfully deleted!'); 
+            redirect('crud/', 'location');
+
+        } 
+
+        //------ END OF DELETE FUNCTION ------//
         //------------------------------------//
     }

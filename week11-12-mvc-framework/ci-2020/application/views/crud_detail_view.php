@@ -12,6 +12,9 @@
             <a href="<?php echo base_url() ."crud/delete/" .$row->animal_id;?>" class="btn btn-danger btn-sm" 
             onClick="return confirm('Are you sure to delete data?')"> 
             <i class="material-icons">delete</i>Delete</a>
+
+            
+            <p>echo "added by " . $query;</p>
         </div> 
     <?php endforeach;?> 
 

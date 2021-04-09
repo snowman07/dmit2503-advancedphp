@@ -17,6 +17,7 @@
             } 
         } 
 
+        //---------For display of whats in the db
         function get_animal_detail($id){ 
             $this->db->where('animal_id', $id); 
             $query = $this->db->get('ci_animals'); 
@@ -26,6 +27,14 @@
             }else{ 
                 return FALSE; 
             } 
+
+            //----JOIN here
+            $this->db->table('ci_animals');
+            $this->select('*');
+            $this->join('users', 'users.id = ci_animals.author_id');
+            $query = $this->get('users.username');
+            // echo "added by " . $query;
+
         }
         
         function insert_animal($data){ 

@@ -145,4 +145,22 @@
 
         //------ END OF DELETE FUNCTION ------//
         //------------------------------------//
+
+
+        // //------------------------------------//
+        // //----- START OF DELETE FUNCTION -----//
+
+        // public function delete($id) {
+            
+        //     $this->load->model('crud_model'); 
+            
+        //     $this->crud_model->delete_animal($id);
+        //     //echo "Successfully deleted!";
+        //     //$this->session->set_flashdata('message', 'Successfully deleted!'); 
+        //     redirect('crud/', 'location');
+
+        // } 
+
+        // //------ END OF DELETE FUNCTION ------//
+        //------------------------------------//
     }

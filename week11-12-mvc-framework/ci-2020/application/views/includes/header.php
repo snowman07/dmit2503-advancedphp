@@ -107,7 +107,7 @@
  
     <?php $message = $this->session->flashdata('message'); ?> 
     <?php if ($message): ?> 
-        <h3 class="alert alert-primary"><i class="material-icons">thumb_up</i>&nbsp;<?php echo $message ?></h3> 
+        <h3 class="alert alert-primary" id="message"><i class="material-icons">thumb_up</i>&nbsp;<?php echo $message ?></h3> 
     <?php endif; ?>
 
     <!-- This ends the header include -->

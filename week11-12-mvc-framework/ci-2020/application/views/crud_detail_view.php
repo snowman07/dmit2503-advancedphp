@@ -11,10 +11,11 @@
             <i class="material-icons">edit</i>Edit</a> 
             <a href="<?php echo base_url() ."crud/delete/" .$row->animal_id;?>" class="btn btn-danger btn-sm" 
             onClick="return confirm('Are you sure to delete data?')"> 
-            <i class="material-icons">delete</i>Delete</a>
+            <i class="material-icons">delete</i>Delete</a><br/><br/>
 
-            
-            <p>echo "added by " . $query;</p>
+            <!-- To display the username -->
+            <button type="button" class="btn btn-light">Added by: <?php echo $row->username ?> </button> 
+
         </div> 
     <?php endforeach;?> 
 

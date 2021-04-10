@@ -18,8 +18,10 @@
         } 
 
         //---------For display of whats in the db
-        function get_animal_detail($id){ 
-            $this->db->where('animal_id', $id); 
+        function get_animal_detail($id)
+        { 
+            $this->db->where('animal_id', $id, 'username'); 
+            $this->db->join('users', 'users.id = ci_animals.author_id'); //JOIN; to display username
             $query = $this->db->get('ci_animals'); 
             
             if ( $query->num_rows() > 0 ){ 
@@ -28,12 +30,12 @@
                 return FALSE; 
             } 
 
-            //----JOIN here
-            $this->db->table('ci_animals');
-            $this->select('*');
-            $this->join('users', 'users.id = ci_animals.author_id');
-            $query = $this->get('users.username');
-            // echo "added by " . $query;
+            // //----JOIN here
+            // $this->db->table('ci_animals');
+            // $this->select('*');
+            // $this->join('users', 'users.id = ci_animals.author_id');
+            // $query = $this->get('users.username');
+            // // echo "added by " . $query;
 
         }
         

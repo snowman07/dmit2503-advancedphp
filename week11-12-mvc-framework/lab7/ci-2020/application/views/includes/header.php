@@ -61,11 +61,11 @@
                     <a class="nav-link" href="#">Pricing</a>
                 </li> -->
                 <li class="nav-item active">
-                    <a class="navbar-brand" href="<?php echo base_url()?>crud">CRUD</a>
+                    <a class="navbar-brand" href="<?php echo base_url()?>crud">CRUDLINK</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        CRUDLINKss
+                        CRUDLINK
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="">Read</a> 

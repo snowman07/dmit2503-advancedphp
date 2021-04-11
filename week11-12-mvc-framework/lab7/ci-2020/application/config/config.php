@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://adomingo4.dmitstudent.ca/dmit2503/week11-12-mvc-framework/ci-2020';
+$config['base_url'] = 'http://adomingo4.dmitstudent.ca/dmit2503/week11-12-mvc-framework/lab7/ci-2020';
 
 /*
 |--------------------------------------------------------------------------

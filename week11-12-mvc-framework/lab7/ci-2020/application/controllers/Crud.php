@@ -16,7 +16,7 @@
         // } 
 
         public function index(){ 
-            $data['heading'] = "Reading from a DB"; 
+            $data['heading'] = "List of Articles"; 
             $this->load->model('crud_model'); 
             $data['results'] = $this->crud_model->get_animals(); 
             

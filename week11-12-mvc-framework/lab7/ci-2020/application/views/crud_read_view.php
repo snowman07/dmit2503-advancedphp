@@ -1,15 +1,24 @@
 
+<div class="row">
+    <div class="col-md-12 text-center">
+        <div class="jumbotron">
+            <h1><?php echo $heading?></h1> 
+            <p class="lead">This project is base on code igniter</p>
+        </div>
+    </div>
+</div><br/>
 
-<h1><?php echo $heading?></h1> 
 
 <?php if(($results)) : ?> 
     
     <?php foreach($results as $row): ?> 
 
-        <div class="whatever"> 
-            <h4><?php echo $row->animal_name ?></h4> 
+        <div class="alert alert-info clearfix">
+            <h4 style="border-bottom: 1px solid gray"><?php echo $row->animal_name ?></h4><br/> 
+            
+            <p><?php echo $row->description ?></p>
             <a href="<?php echo base_url() . "crud/detail/" .$row->animal_id; ?>" class="btn btn-primary btn-sm">Read more</a>
-        </div> 
+        </div><br/>
 
     <?php endforeach;?> 
     

@@ -64,14 +64,14 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        CRUDLINK
+                        Article
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="">Read</a> 
-                        <a class="dropdown-item" href="<?php echo base_url()?>crud/write">Write</a>
+                        <!-- <a class="dropdown-item" href="">Read an Article</a>  -->
+                        <a class="dropdown-item" href="<?php echo base_url()?>crud/write">Write an Article</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Birds
                     </a>
@@ -81,7 +81,7 @@
                         <a class="dropdown-item" href="<?php echo base_url()?>birds/sparrow">Sparrow</a>
                         <a class="dropdown-item" href="<?php echo base_url()?>birds/falcon">Falcon</a>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
 
@@ -101,7 +101,7 @@
         <?php endif; ?>
 
 
-    </nav>
+    </nav> <br/>
 
  
     <?php $message = $this->session->flashdata('message'); ?> 

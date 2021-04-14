@@ -17,7 +17,7 @@
         <div class="alert alert-info clearfix">
             <h4 style="border-bottom: 1px solid gray"><?php echo $row->animal_name ?></h4><br/> 
             
-            <p><?php echo $row->description ?></p>
+            <p><?php echo  substr($row->description, 0, 300) ?></p>
             <a href="<?php echo base_url() . "crud/detail/" .$row->animal_id; ?>" class="btn btn-primary btn-sm">Read more</a>
         </div><br/>
 

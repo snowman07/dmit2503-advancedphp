@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-<div class="container" style="color: red;">
+<div class="container">
     <?php
     echo isset($_SESSION['auth_message']) ? $_SESSION['auth_message'] : FALSE;
     ?>

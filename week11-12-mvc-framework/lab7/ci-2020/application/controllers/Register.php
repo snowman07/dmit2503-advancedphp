@@ -53,7 +53,7 @@ class Register extends CI_Controller
             {
                 $_SESSION['auth_message'] = 'The account has been created. You may now login.';
                 $this->session->mark_as_flash('auth_message');
-                redirect('user/login');
+                redirect('/auth/login');
             }
             else
             {

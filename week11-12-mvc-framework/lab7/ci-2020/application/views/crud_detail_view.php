@@ -16,7 +16,9 @@
                 <h3><?php echo $row->animal_name ?></h3> 
 
                 <!-- To display the username -->
-                <button type="button" class="btn btn-light">Added by: <?php echo $row->username ?> </button> 
+                <button type="button" class="btn btn-light">Added by: <?php echo $row->username ?> on 
+
+                </button> 
             </div>
         </div> <br/><br/>
         <div class="row">

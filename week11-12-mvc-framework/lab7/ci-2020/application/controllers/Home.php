@@ -21,18 +21,18 @@ class Home extends CI_Controller {
 	public function index()
 	{
         $this->load->view('includes/header');
-		$this->load->view('home_view');
+		$this->load->view('crud');
         $this->load->view('includes/footer');
         //echo "<h1>This is home.</h1>";
 	}
 
-    public function test()
-    {
-        $this->load->view('includes/header');
-        $this->load->view('test_view');
-        $this->load->view('includes/footer');
-        //echo "<h1>This is TEST function in Home controller</h1>";
-    }
+    // public function test()
+    // {
+    //     $this->load->view('includes/header');
+    //     $this->load->view('test_view');
+    //     $this->load->view('includes/footer');
+    //     //echo "<h1>This is TEST function in Home controller</h1>";
+    // }
 
 
 }
